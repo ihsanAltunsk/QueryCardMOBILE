@@ -3,11 +3,9 @@ package utilities;
 import io.appium.java_client.*;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
-import io.appium.java_client.touch.ActionOptions;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.apache.commons.io.FileUtils;
-import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Pause;
 import org.openqa.selenium.interactions.PointerInput;
@@ -19,12 +17,9 @@ import static java.util.Collections.singletonList;
 import static utilities.Driver.getAppiumDriver;
 
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.options.UiAutomator2Options;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
@@ -32,11 +27,7 @@ import java.util.Date;
 public class ReusableMethods {
    private static DesiredCapabilities desiredCapabilities=new DesiredCapabilities();
 
-
-
-
-    public static void apkYukle(){
-
+    public static void uploadApk(){
         desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME,ConfigReader.getProperty("deviceName"));
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,ConfigReader.getProperty("version"));
@@ -45,6 +36,7 @@ public class ReusableMethods {
         desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,ConfigReader.getProperty("appPackage"));
         desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,ConfigReader.getProperty("appActivity"));
     }
+
     public static void koordinatTiklama(int xKoordinat, int yKoordinat, int bekleme, WebElement slider) throws InterruptedException {
         Point source = slider.getLocation();
         PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
@@ -60,7 +52,7 @@ public class ReusableMethods {
         getAppiumDriver().perform(singletonList(sequence));
            }
 
-  //  static AndroidDriver<AndroidElement> driver=Driver.getAppiumDriver();
+    // static AndroidDriver<AndroidElement> driver=Driver.getAppiumDriver();
     public static void koordinatTiklamaMethodu(int x,int y) throws InterruptedException {
         TouchAction action=new TouchAction((PerformsTouchActions) getAppiumDriver());
         action.press(PointOption.point(x,y)).release().perform();
@@ -69,13 +61,13 @@ public class ReusableMethods {
 
     public static void scrollWithUiScrollableAndClick(String elementText) {
         AndroidDriver driver = (AndroidDriver)  Driver.getAppiumDriver();
-      //  driver.findElement(AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))");
+    //  driver.findElement(AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))");
         driver.findElement(By.xpath("//*[@text='" + elementText + "']")).click();
 
     }
     public static void scrollWithUiScrollable(String elementText) {
         AndroidDriver driver = (AndroidDriver)  getAppiumDriver();
-     //   driver.findElement(AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))"));
+    //  driver.findElement(AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))"));
 
     }
 
@@ -102,6 +94,7 @@ public class ReusableMethods {
                 .release()
                 .perform();
     }
+
     public static void wait(int saniye) {
         try {
             Thread.sleep(saniye * 1000);
@@ -109,6 +102,4 @@ public class ReusableMethods {
             e.printStackTrace();
         }
     }
-
-
 }
