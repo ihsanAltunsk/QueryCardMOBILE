@@ -40,5 +40,19 @@ public class QueryCardPage {
     public WebElement signUp1;
     @AndroidFindBy(xpath = "(//*[@content-desc='Sign Up'])[2]")
     public WebElement signUp2;
+    //reyyan
+
+    @AndroidFindBy(xpath = "//*[@content-desc='Women']")
+    public WebElement womanButton;
+
+    @AndroidFindBy(xpath = "//*[@content-desc='Casual Women Shoes" + "0 (0  Reviews)" + "$250.00']")
+    public WebElement womanShoes;
+
+    @AndroidFindBy(xpath = "//*[@content-desc='Casual Women Shoes']")
+    public WebElement viewWomanShoes;
+
+
+
+
 
 }
