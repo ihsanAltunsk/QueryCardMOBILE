@@ -3,6 +3,7 @@ package stepdefinitions;
 import hooks.Base;
 import io.cucumber.java.en.Given;
 import utilities.ConfigReader;
+import utilities.Driver;
 
 import static utilities.ReusableMethods.clickAndVerify;
 import static utilities.ReusableMethods.signIn;
@@ -15,5 +16,11 @@ public class CommonStepdefinitions extends Base {
     @Given("User clicks on profile button.")
     public void user_clicks_on_profile_button() {
         clickAndVerify(queryCardPage.profileButton);
+    }
+    @Given("User navigates to back for {int} time.")
+    public void user_navigates_to_back_time(int count) {
+        for (int i = 0; i < count; i++) {
+            Driver.getAppiumDriver().navigate().back();
+        }
     }
 }

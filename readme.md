@@ -38,3 +38,5 @@
 > User clicks on profile button.
 > 
 > User logs in "".
+> 
+> User navigates to back for 1 time.
