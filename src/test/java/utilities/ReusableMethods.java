@@ -93,6 +93,29 @@ public class ReusableMethods extends Base {
                 .perform();
     }
 
+    public static void scrollDown(int ms, int z) throws InterruptedException {
+        TouchAction action=new TouchAction<>((PerformsTouchActions) getAppiumDriver());
+        Thread.sleep(1000);
+        for (int i = 1; i <= z; i++) {
+            action.press(PointOption.point(480,1561))
+                    .waitAction(WaitOptions.waitOptions(Duration.ofMillis(ms)))
+                    .moveTo(PointOption.point(480,70))
+                    .release()
+                    .perform();
+        }
+    }
+
+    public static void scrollUp(int ms, int z) throws InterruptedException {
+        TouchAction action=new TouchAction<>((PerformsTouchActions) getAppiumDriver());
+        Thread.sleep(1000);
+        for (int i = 1; i <= z; i++) {
+            action.press(PointOption.point(480,70))
+                    .waitAction(WaitOptions.waitOptions(Duration.ofMillis(ms)))
+                    .moveTo(PointOption.point(480,1561))
+                    .release()
+                    .perform();
+        }
+    }
     public static void wait(int saniye) {
         try {
             Thread.sleep(saniye * 1000);
@@ -115,7 +138,6 @@ public class ReusableMethods extends Base {
     }
 
     public static void signIn(String email, String password) throws InterruptedException {
-        Thread.sleep(3000);
         clickAndVerify(queryCardPage.profileButton);
         clickAndVerify(queryCardPage.signInButton);
         clickAndVerify(queryCardPage.useEmail);

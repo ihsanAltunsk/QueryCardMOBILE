@@ -6,7 +6,6 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.junit.Assert.assertTrue;
 import static utilities.Driver.getAppiumDriver;
 
 public class QueryCardPage {

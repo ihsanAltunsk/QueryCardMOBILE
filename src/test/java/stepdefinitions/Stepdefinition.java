@@ -9,10 +9,6 @@ import static utilities.ReusableMethods.*;
 public class Stepdefinition extends Base {
 
     //İhsan
-    @Given("User clicks on profile button.")
-    public void user_clicks_on_profile_button() {
-        clickAndVerify(queryCardPage.profileButton);
-    }
     @Given("User clicks on signUp button and displays the signUp page")
     public void user_clicks_on_sign_up_button_and_displays_the_sign_up_page() {
         clickAndVerify(queryCardPage.signUpButton);
@@ -41,4 +37,27 @@ public class Stepdefinition extends Base {
     }
 
 //======================================================================================================================
+    //Reyyan
+
+
+
+//======================================================================================================================
+    //Azim
+
+
+
+//======================================================================================================================
+    //Senayda
+
+
+
+//======================================================================================================================
+    //Hümeyra
+
+
+
+//======================================================================================================================
+    //Murat
+
+
 }

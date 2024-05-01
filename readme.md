@@ -36,3 +36,5 @@
 
 ***ORTAK KULLANILACAK FEATURE STEPLERİ***
 > User clicks on profile button.
+> 
+> User logs in "".
