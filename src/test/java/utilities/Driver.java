@@ -1,5 +1,6 @@
 package utilities;
 
+import hooks.Base;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
@@ -9,12 +10,9 @@ import java.net.URL;
 import java.time.Duration;
 
 
-public class Driver {
+public class Driver extends Base {
     private Driver() {
     }
-
-    private static UiAutomator2Options options;
-    private static AppiumDriver driver;
 
     public static AppiumDriver getAppiumDriver() {
 
@@ -32,7 +30,7 @@ public class Driver {
                 case "Android":
                     options = new UiAutomator2Options();
                     options.setPlatformName("Android").setAutomationName("UiAutomator2");
-                    options.setApp("C:\\Users\\user\\Downloads\\querycart1.0.apk");
+                    options.setApp("src/test/java/Apps/querycart1.0.apk");
                     options.setAppPackage("com.inilabs.shopking");
                     options.setAppActivity("com.inilabs.shopking.MainActivity");
                     options.setUdid("emulator-5554");
