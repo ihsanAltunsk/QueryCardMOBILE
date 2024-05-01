@@ -1,35 +1,44 @@
 package stepdefinitions;
 
-import Page.QueryCardPage;
+import hooks.Base;
 import io.cucumber.java.en.Given;
-import utilities.ReusableMethods;
 
-import static utilities.Driver.getAppiumDriver;
+import static org.junit.Assert.*;
+import static utilities.ReusableMethods.*;
 
-public class Stepdefinition {
-    QueryCardPage card=new QueryCardPage();
+public class Stepdefinition extends Base {
 
-    @Given("Kullanici driver ayarlamalari yapar")
-    public void kullanici_driver_ayarlamalari_yapar() {
-        getAppiumDriver();
-
+    //İhsan
+    @Given("User clicks on profile button.")
+    public void user_clicks_on_profile_button() {
+        clickAndVerify(queryCardPage.profileButton);
     }
-    @Given("Kullanici anasayfada oldugunu dogrular")
-    public void kullanici_anasayfada_oldugunu_dogrular() throws InterruptedException {
-        card.LogoGorunurTest();
-      //  ReusableMethods.koordinatTiklamaMethodu(300,500);
-      //  ReusableMethods.ekranKaydirmaMethodu(300,160,300,500,300);
+    @Given("User clicks on signUp button and displays the signUp page")
+    public void user_clicks_on_sign_up_button_and_displays_the_sign_up_page() {
+        clickAndVerify(queryCardPage.signUpButton);
+        assertTrue(queryCardPage.signUp1.isDisplayed());
+    }
+    @Given("User clicks on name box and enters a valid name.")
+    public void user_clicks_on_name_box_and_enters_a_valid_name() {
+        name = faker.name().fullName();
+        clickAndSendKeys(queryCardPage.nameBox, name);
+    }
+    @Given("User chooses -*Use email instead- and clicks on email box then enters a valid email.")
+    public void user_chooses_and_clicks_on_email_box_then_enters_a_valid_email() {
+        clickAndVerify(queryCardPage.useEmail);
+        email = faker.internet().emailAddress();
+        clickAndSendKeys(queryCardPage.emailBox2, email);
+    }
+    @Given("User clicks on password box and enters a valid password.")
+    public void user_clicks_on_password_box_and_enters_a_valid_password() {
+        password = faker.internet().password(6,10,true,true);
+        clickAndSendKeys(queryCardPage.passwordBox2, password);
+    }
+    @Given("User clicks on signUp button and verifies that he-she registered.")
+    public void user_clicks_on_sign_up_button_and_verifies_that_he_she_registered() throws InterruptedException {
+        koordinatTiklamaMethodu(228, 1847);
+        clickAndVerify(queryCardPage.signUp2);
     }
 
-    @Given("Profile ikonuna tıklar")
-    public void profile_ikonuna_tıklar() throws InterruptedException {
-        Thread.sleep(4000);
-       card.profileImageViewClickTest();
-    }
-    @Given("Uyeligini acamak icin sıgn In butonuna tıklar.")
-    public void uyeligini_acamak_icin_sign_in_butonuna_tıklar() throws InterruptedException {
-        Thread.sleep(3000);
-        card.signInClick();
-    }
-
+//======================================================================================================================
 }

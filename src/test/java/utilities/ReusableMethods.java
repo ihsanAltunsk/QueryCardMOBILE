@@ -1,5 +1,6 @@
 package utilities;
 
+import hooks.Base;
 import io.appium.java_client.*;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -10,10 +11,10 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Pause;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static java.time.Duration.ofMillis;
 import static java.util.Collections.singletonList;
+import static org.junit.Assert.assertTrue;
 import static utilities.Driver.getAppiumDriver;
 
 import io.appium.java_client.android.AndroidDriver;
@@ -24,15 +25,12 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
 
-public class ReusableMethods {
-   private static DesiredCapabilities desiredCapabilities=new DesiredCapabilities();
-
+public class ReusableMethods extends Base {
     public static void uploadApk(){
         desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME,ConfigReader.getProperty("deviceName"));
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,ConfigReader.getProperty("version"));
         desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
-        //desiredCapabilities.setCapability(MobileCapabilityType.APP,ConfigReader.getProperty(apk));
         desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,ConfigReader.getProperty("appPackage"));
         desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,ConfigReader.getProperty("appActivity"));
     }
@@ -63,8 +61,8 @@ public class ReusableMethods {
         AndroidDriver driver = (AndroidDriver)  Driver.getAppiumDriver();
     //  driver.findElement(AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))");
         driver.findElement(By.xpath("//*[@text='" + elementText + "']")).click();
-
     }
+
     public static void scrollWithUiScrollable(String elementText) {
         AndroidDriver driver = (AndroidDriver)  getAppiumDriver();
     //  driver.findElement(AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))"));
@@ -101,5 +99,30 @@ public class ReusableMethods {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void clickAndVerify(WebElement element) {
+        assertTrue(element.isDisplayed());
+        assertTrue(element.isEnabled());
+        element.click();
+    }
+
+    public static void clickAndSendKeys(WebElement element, String context) {
+        assertTrue(element.isDisplayed());
+        assertTrue(element.isEnabled());
+        element.click();
+        element.sendKeys(context);
+    }
+
+    public static void signIn(String email, String password) throws InterruptedException {
+        Thread.sleep(3000);
+        clickAndVerify(queryCardPage.profileButton);
+        clickAndVerify(queryCardPage.signInButton);
+        clickAndVerify(queryCardPage.useEmail);
+        clickAndVerify(queryCardPage.emailBox);
+        queryCardPage.emailBox.sendKeys(email);
+        clickAndVerify(queryCardPage.passwordBox);
+        queryCardPage.passwordBox.sendKeys(password);
+        clickAndVerify(queryCardPage.signIn);
     }
 }

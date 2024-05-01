@@ -4,16 +4,7 @@ package Page;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import utilities.Driver;
-import utilities.ReusableMethods;
-
-
-import java.awt.*;
-import java.time.Duration;
 
 import static org.junit.Assert.assertTrue;
 import static utilities.Driver.getAppiumDriver;
@@ -21,42 +12,34 @@ import static utilities.Driver.getAppiumDriver;
 public class QueryCardPage {
    public QueryCardPage(){
        PageFactory.initElements(new AppiumFieldDecorator(getAppiumDriver()),this);
-
     }
     @AndroidFindBy(xpath = "(//android.widget.ImageView[1])[1]")
-    private WebElement queryCardLogoElement;
+    public WebElement queryCardLogoElement;
     @AndroidFindBy (xpath = "(//android.widget.ImageView[1])[2]")
-    private WebElement searchBoxElement;
+    public WebElement searchBoxElement;
     @AndroidFindBy (accessibility = "Sign In")
-    private WebElement signInButton;
+    public WebElement signInButton;
     @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='Profile']")
-    private WebElement profileImageView;
-
-
-    public void LogoGorunurTest(){
-
-            try {
-               Thread.sleep(6000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-            assertTrue(queryCardLogoElement.isDisplayed());
-        }
-
-
-    public void SearchBoxGorunurlukClickTest(){
-        assertTrue(searchBoxElement.isDisplayed());
-        searchBoxElement.click();
-    }
-    public void profileImageViewClickTest(){
-        assertTrue(profileImageView.isDisplayed());
-        profileImageView.click();
-    }
-    public void signInClick(){
-        assertTrue(signInButton.isDisplayed());
-        signInButton.click();
-    }
-
-
+    public WebElement profileButton;
+    @AndroidFindBy(xpath = "//android.widget.EditText[1]")
+    public WebElement emailBox;
+    @AndroidFindBy(xpath = "//android.widget.EditText[2]")
+    public WebElement passwordBox;
+    @AndroidFindBy(xpath = "(//*[@content-desc='Sign In'])[2]")
+    public WebElement signIn;
+    @AndroidFindBy(xpath = "//*[@content-desc='*Use Email Instead']")
+    public WebElement useEmail;
+    @AndroidFindBy(xpath = "//*[@content-desc='Sign Up']")
+    public WebElement signUpButton;
+    @AndroidFindBy(xpath = "//*//android.widget.EditText[1]")
+    public WebElement nameBox;
+    @AndroidFindBy(xpath = "//*//android.widget.EditText[2]")
+    public WebElement emailBox2;
+    @AndroidFindBy(xpath = "//*//android.widget.EditText[3]")
+    public WebElement passwordBox2;
+    @AndroidFindBy(xpath = "(//*[@content-desc='Sign Up'])[1]")
+    public WebElement signUp1;
+    @AndroidFindBy(xpath = "(//*[@content-desc='Sign Up'])[2]")
+    public WebElement signUp2;
 
 }
