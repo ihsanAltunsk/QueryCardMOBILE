@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import hooks.Base;
 import io.cucumber.java.en.Given;
+import utilities.Driver;
 
 import static org.junit.Assert.*;
 import static utilities.ReusableMethods.*;
@@ -16,6 +17,7 @@ public class Stepdefinition extends Base {
     }
     @Given("User clicks on name box and enters a valid name.")
     public void user_clicks_on_name_box_and_enters_a_valid_name() {
+        Driver.getAppiumDriver().navigate().back();
         name = faker.name().fullName();
         clickAndSendKeys(queryCardPage.nameBox, name);
     }
