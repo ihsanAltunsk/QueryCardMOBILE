@@ -2,6 +2,8 @@ package hooks;
 
 import Page.QueryCardPage;
 import com.github.javafaker.Faker;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.options.UiAutomator2Options;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.sql.*;
@@ -14,6 +16,8 @@ public abstract class Base {
     public static Date date;
     public static Random random;
     public static Faker faker;
+    public static UiAutomator2Options options;
+    public static AppiumDriver driver;
     public static DesiredCapabilities desiredCapabilities;
     public static QueryCardPage queryCardPage;
 

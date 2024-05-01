@@ -2,7 +2,6 @@ package stepdefinitions;
 
 import hooks.Base;
 import io.cucumber.java.en.Given;
-import utilities.Driver;
 
 import static org.junit.Assert.*;
 import static utilities.ReusableMethods.*;
@@ -33,7 +32,7 @@ public class Stepdefinition extends Base {
     }
     @Given("User clicks on signUp button and verifies that he-she registered.")
     public void user_clicks_on_sign_up_button_and_verifies_that_he_she_registered() throws InterruptedException {
-        koordinatTiklamaMethodu(228, 1847);
+        koordinatTiklamaMethodu(227,1853);
         clickAndVerify(queryCardPage.signUp2);
     }
 
