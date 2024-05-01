@@ -27,7 +27,7 @@ public class Stepdefinition extends Base {
     }
     @Given("User clicks on password box and enters a valid password.")
     public void user_clicks_on_password_box_and_enters_a_valid_password() {
-        password = faker.internet().password(6,10,true,true);
+        password = faker.internet().password(6,10,true,true, true);
         clickAndSendKeys(queryCardPage.passwordBox2, password);
     }
     @Given("User clicks on signUp button and verifies that he-she registered.")
@@ -40,7 +40,7 @@ public class Stepdefinition extends Base {
     //Reyyan US12 TC01/02
     @Given("Verify that the Women's Category window is displayed on the homepage.")
     public void verify_that_the_women_s_category_window_is_displayed_on_the_homepage() {
-        scrollWithUiScrollableAndClick
+
     }
 
     @Given("Click on the Women's category window.")
