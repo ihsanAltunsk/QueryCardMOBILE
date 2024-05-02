@@ -5,8 +5,7 @@ import io.cucumber.java.en.Given;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-import static utilities.ReusableMethods.clickAndVerify;
-import static utilities.ReusableMethods.signIn;
+import static utilities.ReusableMethods.*;
 
 public class CommonStepdefinitions extends Base {
     @Given("User logs in {string}.")
@@ -22,5 +21,9 @@ public class CommonStepdefinitions extends Base {
         for (int i = 0; i < count; i++) {
             Driver.getAppiumDriver().navigate().back();
         }
+    }
+    @Given("User clicks on {int},{int}.")
+    public void user_clicks_on(int x, int y){
+        koordinatTiklamaMethodu(x,y);
     }
 }

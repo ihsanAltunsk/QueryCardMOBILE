@@ -12,6 +12,8 @@ public class QueryCardPage {
    public QueryCardPage(){
        PageFactory.initElements(new AppiumFieldDecorator(getAppiumDriver()),this);
     }
+
+   //ihsan
    @AndroidFindBy (accessibility = "Sign In")
    public WebElement signInButton;
    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='Profile']")
@@ -84,49 +86,44 @@ public class QueryCardPage {
    public WebElement stripe;
    @AndroidFindBy(xpath = "//*[@content-desc='Confirm Order']")
    public WebElement confirmOrderButton;
-    //reyyan
 
-    @AndroidFindBy(xpath = "//*[@content-desc='Women']")
-    public WebElement womanButton;
+   //===================================================================================================================
+   //reyyan
 
-    @AndroidFindBy(accessibility = "Casual Women Shoes")
-    public WebElement womanShoes;
+   @AndroidFindBy(xpath = "//*[@content-desc='Women']")
+   public WebElement womanButton;
+   @AndroidFindBy(accessibility = "Casual Women Shoes")
+   public WebElement womanShoes;
+   @AndroidFindBy(accessibility= "White")
+   public WebElement colorWhite;
+   @AndroidFindBy(accessibility = "Quantity:")
+   public WebElement quantity;
+   @AndroidFindBy(accessibility = "My Account")
+   public WebElement dashboard;
+   @AndroidFindBy(accessibility = "Total Orders")
+   public WebElement summaryInformation;
 
-    @AndroidFindBy(accessibility= "White")
-    public WebElement colorWhite;
-
-    @AndroidFindBy(accessibility = "Quantity:")
-    public WebElement quantity;
-
-    @AndroidFindBy(accessibility = "Add To Cart")
-    public WebElement addToCart;
-
-    @AndroidFindBy(accessibility = "Profile")
-    public WebElement profile;
-
-    @AndroidFindBy(accessibility = "My Account")
-    public WebElement dashboard;
-
-    @AndroidFindBy(accessibility = "Total Orders")
-    public WebElement summaryInformation;
-
-    @AndroidFindBy(accessibility = "Order History")
-    public WebElement orderHistory;
-
-    // senayda ===============================================================
+   //===================================================================================================================
+   //senayda
    @AndroidFindBy (xpath = "(//android.view.View[1]/android.widget.ImageView[1])[1]")
    public WebElement homePageLogo;
 
-    //Azim
-    @AndroidFindBy(xpath ="//android.view.View[@content-desc='Juniors']")
-    public WebElement viewJuniors;
+   //===================================================================================================================
+   //Azim
+   @AndroidFindBy(xpath ="//android.view.View[@content-desc='Juniors']")
+   public WebElement viewJuniors;
+   @AndroidFindBy(xpath ="//android.widget.ScrollView")
+   public WebElement JuniorsProduct;
+   @AndroidFindBy(xpath ="//android.widget.ImageView[@content-desc='Logout']")
+   public WebElement logoutButton;
 
-    @AndroidFindBy(xpath ="//android.widget.ScrollView")
-    public WebElement JuniorsProduct;
+   //===================================================================================================================
+   //hümeyra
 
-    @AndroidFindBy(xpath ="//android.widget.ImageView[@content-desc='Logout']")
-    public WebElement logoutButton;
 
+
+   //===================================================================================================================
+   //murat
 
 
 }
