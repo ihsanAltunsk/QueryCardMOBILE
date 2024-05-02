@@ -45,11 +45,29 @@ public class QueryCardPage {
     @AndroidFindBy(xpath = "//*[@content-desc='Women']")
     public WebElement womanButton;
 
-    @AndroidFindBy(xpath = "//*[@content-desc='Casual Women Shoes" + "0 (0  Reviews)" + "$250.00']")
+    @AndroidFindBy(accessibility = "Casual Women Shoes")
     public WebElement womanShoes;
 
-    @AndroidFindBy(xpath = "//*[@content-desc='Casual Women Shoes']")
-    public WebElement viewWomanShoes;
+    @AndroidFindBy(accessibility= "White")
+    public WebElement colorWhite;
+
+    @AndroidFindBy(accessibility = "Quantity:")
+    public WebElement quantity;
+
+    @AndroidFindBy(accessibility = "Add To Cart")
+    public WebElement addToCart;
+
+    @AndroidFindBy(accessibility = "Profile")
+    public WebElement profile;
+
+    @AndroidFindBy(accessibility = "My Account")
+    public WebElement dashboard;
+
+    @AndroidFindBy(accessibility = "Total Orders")
+    public WebElement summaryInformation;
+
+    @AndroidFindBy(accessibility = "Order History")
+    public WebElement orderHistory;
 
 
 

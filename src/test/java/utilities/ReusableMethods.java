@@ -168,4 +168,5 @@ public class ReusableMethods extends Base {
         queryCardPage.passwordBox.sendKeys(password);
         clickAndVerify(queryCardPage.signIn);
     }
+
 }
