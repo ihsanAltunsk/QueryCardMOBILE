@@ -8,8 +8,5 @@
       * User adds the product to the cart and displays the cart.
       * User proceeds to checkout.
       * User selects stripe payment method and enters the credentials
+
     Scenario: Registered user should be able to place orders via payment method.
-
-
-
-

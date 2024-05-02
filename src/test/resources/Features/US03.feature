@@ -1,7 +1,6 @@
 #Reporter : Senayda Akkaya
 #US Priority : HIGH
   Feature: As a user, I want to be able to shop without registering on the site
-
     Scenario: TC01 User should be able to see products and product features on the homepageUser should be
     able to see products and product features on the homepage
 
