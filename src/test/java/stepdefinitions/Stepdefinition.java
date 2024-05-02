@@ -38,58 +38,48 @@ public class Stepdefinition extends Base {
 
 //======================================================================================================================
     //Reyyan US12 TC01/02
-    @Given("Verify that the Women's Category window is displayed on the homepage.")
-    public void verify_that_the_women_s_category_window_is_displayed_on_the_homepage() {
+    @Given("Verify that the Women's Category window is displayed and clicked on the home page.")
+    public void verify_that_the_women_s_category_window_is_displayed_on_the_homepage() throws InterruptedException {
+        ekranKaydirmaMethodu(900,750,500,170,750,5);
+        clickAndVerify(queryCardPage.womanButton);
+    }
+
+    @Given("Click on a product on the Products page and verify that it is displayed")
+    public void click_a_product_on_the_products_page() throws InterruptedException {
+        koordinatTiklamaMethodu(300, 560);
+        assertTrue(queryCardPage.womanShoes.isDisplayed());
 
     }
 
-    @Given("Click on the Women's category window.")
-    public void click_on_the_women_s_category_window() {
-
-    }
-
-    @Given("Click a product on the products page.")
-    public void click_a_product_on_the_products_page() {
-
-    }
-
-    @Given("Verify that the product is displayed.")
-    public void verify_that_the_product_is_displayed() {
-
-    }
     @Given("Verify that the filtering icon {string} and {string} is visible and active.")
     public void verify_that_the_filtering_icon_and_is_visible_and_active(String string, String string2) {
+        ekranKaydirmaMethodu(553,1745,500,595,1093,1);
+        clickAndVerify(queryCardPage.colorWhite);
+        assertTrue(queryCardPage.quantity.isDisplayed());
+        koordinatTiklamaMethodu(293,982);
 
     }
 
     @Given("Verify that a product's add to cart button is active on the products page.")
     public void verify_that_a_product_s_add_to_cart_button_is_active_on_the_products_page() {
+        clickAndVerify(queryCardPage.addToCart);
 
     }
     //US13
-    @Given("Verify that your profile icon is visible.")
-    public void verify_that_your_profile_icon_is_visible() {
-
-    }
-
-    @Given("Verify that the Dashboard page is displayed.")
-    public void verify_that_the_dashboard_page_is_displayed() {
-
-    }
 
     @Given("Click the My Account button.")
     public void click_the_my_account_button() {
-
+        koordinatTiklamaMethodu(274,756);
     }
 
     @Given("Verify that summary information boards are displayed.")
     public void verify_that_summary_information_boards_are_displayed() {
-
+        assertTrue(queryCardPage.summaryInformation.isDisplayed());
     }
 
     @Given("Verify that order History is displayed on the My account page")
     public void verify_that_order_history_is_displayed_on_the_my_account_page() {
-
+        assertTrue(queryCardPage.orderHistory.isDisplayed());
     }
     //US17 TC01/02
     @Given("Verify that the Change Password button is visible on the Dashboard page.")
