@@ -51,6 +51,10 @@ public class QueryCardPage {
     @AndroidFindBy(xpath = "//*[@content-desc='Casual Women Shoes']")
     public WebElement viewWomanShoes;
 
+    // senayda ===============================================================
+   @AndroidFindBy (xpath = "(//android.view.View[1]/android.widget.ImageView[1])[1]")
+   public WebElement homePageLogo;
+
 
 
 
