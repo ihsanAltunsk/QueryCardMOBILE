@@ -1,11 +1,8 @@
 package utilities;
 
 import hooks.Base;
-import io.appium.java_client.*;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
-import io.appium.java_client.touch.WaitOptions;
-import io.appium.java_client.touch.offset.PointOption;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Pause;
@@ -125,8 +122,8 @@ public class ReusableMethods extends Base {
     public static void scrollUp(int ms, int count) {
         final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
         for (int i = 1; i <= count; i++) {
-            var start = new Point(480, 70);
-            var end = new Point(480, 1561);
+            var start = new Point(540, 70);
+            var end = new Point (540, 1561);
             var swipe = new Sequence(finger, 1);
             swipe.addAction(finger.createPointerMove(Duration.ofMillis(0),
                     PointerInput.Origin.viewport(), start.getX(), start.getY()));

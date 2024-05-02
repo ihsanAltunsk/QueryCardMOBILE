@@ -2,6 +2,8 @@ package stepdefinitions;
 
 import hooks.Base;
 import io.cucumber.java.en.Given;
+import org.openqa.selenium.By;
+import utilities.Driver;
 
 import static org.junit.Assert.*;
 import static utilities.ReusableMethods.*;
@@ -28,12 +30,113 @@ public class Stepdefinition extends Base {
     @Given("User clicks on password box and enters a valid password.")
     public void user_clicks_on_password_box_and_enters_a_valid_password() {
         password = faker.internet().password(6,10,true,true, true);
+        System.out.println(password);
         clickAndSendKeys(queryCardPage.passwordBox2, password);
     }
     @Given("User clicks on signUp button and verifies that he-she registered.")
     public void user_clicks_on_sign_up_button_and_verifies_that_he_she_registered() throws InterruptedException {
         koordinatTiklamaMethodu(227,1853);
         clickAndVerify(queryCardPage.signUp2);
+        Thread.sleep(500);
+        assertTrue(queryCardPage.signText.isDisplayed());
+    }
+    @Given("User clicks on signUp button and verifies that he-she did not registered.")
+    public void user_clicks_on_sign_up_button_and_verifies_that_he_she_did_not_registered() {
+        koordinatTiklamaMethodu(227,1853);
+        clickAndVerify(queryCardPage.signUp2);
+        assertTrue(queryCardPage.blankAlert.isDisplayed());
+    }
+    @Given("User clicks on signUp button and verifies that he-she did not registered2.")
+    public void user_clicks_on_sign_up_button_and_verifies_that_he_she_did_not_registered2() {
+        koordinatTiklamaMethodu(227,1853);
+        clickAndVerify(queryCardPage.signUp2);
+        assertTrue(queryCardPage.signUp2.isDisplayed());
+    }
+    @Given("User clicks on phoneBox and enters an invalid phone number.")
+    public void user_clicks_on_phone_box_and_enters_an_invalid_phone_number() {
+        phoneNumber = "1234";
+        clickAndSendKeys(queryCardPage.emailBox2, phoneNumber);
+    }
+    @Given("User chooses -*Use email instead- and clicks on email box then enters an invalid email.")
+    public void user_chooses_and_clicks_on_email_box_then_enters_an_invalid_email() {
+        clickAndVerify(queryCardPage.useEmail);
+        email = "wrongemail";
+        clickAndSendKeys(queryCardPage.emailBox2, email);
+    }
+    @Given("User clicks on password box and enters an invalid password.")
+    public void user_clicks_on_password_box_and_enters_an_invalid_password() {
+        password = faker.internet().password(1,4,false,false,false);
+        clickAndSendKeys(queryCardPage.passwordBox2, password);
+    }
+    @Given("User clicks on the product and verifies that he-she navigated to the product page.")
+    public void user_clicks_on_the_product_and_verifies_that_he_she_navigated_to_the_product_page() {
+        koordinatTiklamaMethodu(275,1300);
+        assertTrue(queryCardPage.productHeader.isDisplayed());
+    }
+    @Given("User displays product header and context.")
+    public void user_displays_product_header_and_context() {
+        assertTrue(queryCardPage.productDetails.isDisplayed());
+        assertTrue(queryCardPage.productDetailsContext.isDisplayed());
+    }
+    @Given("User displays the Product Videos title and product videos.")
+    public void user_displays_the_product_videos_title_and_product_videos() {
+        queryCardPage.videosButton.click();
+        queryCardPage.videosTitle.isDisplayed();
+        queryCardPage.reviewButton.click();
+        queryCardPage.reviewTitle.isDisplayed();
+        queryCardPage.shippingButton.click();
+        queryCardPage.shippingTitle.isDisplayed();
+    }
+    @Given("User displays the Review title and reviews of the product.")
+    public void user_displays_the_review_title_and_reviews_of_the_product() {
+        queryCardPage.reviewButton.click();
+        queryCardPage.reviewTitle.isDisplayed();
+    }
+    @Given("User displays the Shipping&Return heading and the shipping and return conditions.")
+    public void user_displays_the_shipping_return_heading_and_the_shipping_and_return_conditions() {
+        queryCardPage.shippingButton.click();
+        queryCardPage.shippingTitle.isDisplayed();
+    }
+
+    @Given("User navigates to Order History and views an order history detail.")
+    public void user_navigates_to_order_history_and_views_an_order_history_detail() {
+        clickAndVerify(queryCardPage.profileButton);
+        clickAndVerify(queryCardPage.orderHistory);
+        assertTrue(queryCardPage.orderHistory.isDisplayed());
+        koordinatTiklamaMethodu(500,500);
+        assertTrue(queryCardPage.orderHistoryPage.isDisplayed());
+    }
+    @Given("User displays the receipt.")
+    public void user_displays_the_receipt() {
+        scrollDown(500,1);
+        clickAndVerify(queryCardPage.downloadReceipt);
+        assertTrue(queryCardPage.receipt.isDisplayed());
+    }
+    @Given("User cancels the order and verifies that the order is canceled.")
+    public void user_cancels_the_order() {
+        clickAndVerify(queryCardPage.cancelOrder);
+        scrollUp(500,1);
+        assertTrue(queryCardPage.canceledOrder.isDisplayed());
+    }
+    @Given("User adds the product to the cart and displays the cart.")
+    public void user_adds_the_product_to_the_cart_and_displays_the_cart() {
+        clickAndVerify(queryCardPage.size);
+        scrollDown(1000,1);
+        clickAndVerify(queryCardPage.addToCartButton);
+        koordinatTiklamaMethodu(980,1685);
+    }
+    @Given("User proceeds to checkout.")
+    public void user_proceeds_to_checkout() {
+        clickAndVerify(queryCardPage.proceedToCheckout);
+        koordinatTiklamaMethodu(470,602);
+        scrollDown(500,1);
+        clickAndVerify(queryCardPage.savePay);
+    }
+    @Given("User selects stripe payment method and enters the credentials")
+    public void user_selects_stripe_payment_method_and_enters_the_credentials() {
+        assertTrue(queryCardPage.paymentMethod.isDisplayed());
+        clickAndVerify(queryCardPage.stripe);
+        clickAndVerify(queryCardPage.confirmOrderButton);
     }
 
 //======================================================================================================================
