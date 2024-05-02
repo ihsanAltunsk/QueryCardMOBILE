@@ -69,6 +69,10 @@ public class QueryCardPage {
     @AndroidFindBy(accessibility = "Order History")
     public WebElement orderHistory;
 
+    // senayda ===============================================================
+   @AndroidFindBy (xpath = "(//android.view.View[1]/android.widget.ImageView[1])[1]")
+   public WebElement homePageLogo;
+
 
 
 

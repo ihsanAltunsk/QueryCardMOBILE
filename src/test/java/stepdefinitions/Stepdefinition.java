@@ -209,9 +209,43 @@ public class Stepdefinition extends Base {
 
 
 //======================================================================================================================
-    //Senayda
+    //Senayda US01 =============================================================
 
+    @Given("User verifies the site's logo on the Home Page.")
+    public void user_verifies_the_site_s_logo_on_the_home_page() {
+       assertTrue(queryCardPage.homePageLogo.isDisplayed());
+    }
 
+    // US02 ===================================================================
+    @Given("User clicks and verifies the Home button")
+    public void user_clicks_and_verifies_the_home_button() {
+        koordinatTiklamaMethodu(106,1724);
+    }
+
+    @Given("User clicks and verifies the Category button")
+    public void user_clicks_and_verifies_the_category_button() {
+        koordinatTiklamaMethodu(325,1695);
+    }
+
+    @Given("User clicks and verifies the Cart button")
+    public void user_clicks_and_verifies_the_cart_button() {
+    koordinatTiklamaMethodu(541,1651);
+    }
+
+    @Given("User clicks and verifies the Profile button")
+    public void user_clicks_and_verifies_the_profile_button() {
+    koordinatTiklamaMethodu(975,1728);
+    }
+
+    @Given("User sees the site logo at the top left of the page and clicking on it refreshes the homepage")
+    public void user_sees_the_site_logo_at_the_top_left_of_the_page_and_clicking_on_it_refreshes_the_homepage() {
+    koordinatTiklamaMethodu(201,117);
+    }
+
+    @Given("User displays the Search Text Box and performs a search")
+    public void user_displays_the_search_text_box_and_performs_a_search() {
+    koordinatTiklamaMethodu(1005,117);
+    }
 
 //======================================================================================================================
     //Hümeyra
