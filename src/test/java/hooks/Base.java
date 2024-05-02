@@ -10,7 +10,7 @@ import java.sql.*;
 import java.util.Random;
 
 public abstract class Base {
-    public static String email, password, name;
+    public static String email, password, name, phoneNumber;
     public static int id;
     public static double sub_total;
     public static Date date;
