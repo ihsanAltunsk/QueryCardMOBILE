@@ -73,7 +73,15 @@ public class QueryCardPage {
    @AndroidFindBy (xpath = "(//android.view.View[1]/android.widget.ImageView[1])[1]")
    public WebElement homePageLogo;
 
+    //Azim
+    @AndroidFindBy(xpath ="//android.view.View[@content-desc='Juniors']")
+    public WebElement viewJuniors;
 
+    @AndroidFindBy(xpath ="//android.widget.ScrollView")
+    public WebElement JuniorsProduct;
+
+    @AndroidFindBy(xpath ="//android.widget.ImageView[@content-desc='Logout']")
+    public WebElement logoutButton;
 
 
 
