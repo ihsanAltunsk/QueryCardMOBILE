@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import hooks.Base;
 import io.cucumber.java.en.Given;
+import utilities.ReusableMethods;
 
 import static org.junit.Assert.*;
 import static utilities.ReusableMethods.*;
@@ -215,7 +216,63 @@ public class Stepdefinition extends Base {
 
 //======================================================================================================================
     //Azim
+//US11-TC01
+@Given("Verify that the Juniors Category window is displayed on the homepage.")
+public void verify_that_the_juniors_category_window_is_displayed_on_the_homepage() {
+    ekranKaydirmaMethodu(900,750, 500, 450,750,16);
+    clickAndVerify(queryCardPage.viewJuniors);
+}
+    @Given("Click on the Juniors category window.")
+    public void click_on_the_juniors_category_window() {
 
+        koordinatTiklamaMethodu(468,760);
+    }
+    @Given("Click a Juniors product on the products page.")
+    public void click_a_juniors_product_on_the_products_page() {
+        koordinatTiklamaMethodu(234,566);
+    }
+    @Given("Verify that the Juniors product is displayed.")
+    public void verify_that_the_juniors_product_is_displayed() {
+        queryCardPage.JuniorsProduct.isDisplayed();
+    }
+//US11-TC03
+   @Given("Click a Juniors favori button on the products page.")
+   public void click_a_juniors_favori_button_on_the_products_page() {
+    koordinatTiklamaMethodu(449,405);
+    }
+    @Given("Verify that a product's add to favorites list the products page.")
+    public void verify_that_a_product_s_add_to_favorites_list_the_products_page() {
+
+    }
+    @Given("Click on the filter icon in the Juniors category window.")
+    public void click_on_the_filter_icon_in_the_juniors_category_window() {
+        koordinatTiklamaMethodu(1008,281);
+    }
+    @Given("Click on Sort By,Price Lov to High on the products page.")
+    public void click_on_sort_by_price_lov_to_high_on_the_products_page() {
+        koordinatTiklamaMethodu(146,278);
+        koordinatTiklamaMethodu(102,581);
+        koordinatTiklamaMethodu(252,599);
+        koordinatTiklamaMethodu(255,600);
+        driver.navigate().back();
+        scrollDown(200,1);
+        koordinatTiklamaMethodu(230,1403);
+    }
+    @Given("Verify that products are filtered by price from cheap to expensive.")
+    public void verify_that_products_are_filtered_by_price_from_cheap_to_expensive() {
+
+    }
+    //US19-TC01
+    @Given("Logout link is displayed in Dashboard sidebar and it is verified to be active.")
+    public void logout_link_is_displayed_in_dashboard_sidebar_and_it_is_verified_to_be_active() {
+        queryCardPage.logoutButton.isDisplayed();
+        queryCardPage.logoutButton.click();
+
+    }
+    @Given("The logout link is clicked and it is verified that you can successfully log out of the site.")
+    public void the_logout_link_is_clicked_and_it_is_verified_that_you_can_successfully_log_out_of_the_site() {
+
+    }
 
 
 //======================================================================================================================
