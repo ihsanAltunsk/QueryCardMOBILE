@@ -10,7 +10,7 @@ import java.sql.*;
 import java.util.Random;
 
 public abstract class Base {
-    public static String email, password, name, phoneNumber;
+    public static String email, password, name, phoneNumber,country,state,city,zipCode,streetAddress;
     public static int id;
     public static double sub_total;
     public static Date date;
@@ -20,6 +20,8 @@ public abstract class Base {
     public static AppiumDriver driver;
     public static DesiredCapabilities desiredCapabilities;
     public static QueryCardPage queryCardPage;
+
+
 
     public static void initialize(){
         faker = new Faker();

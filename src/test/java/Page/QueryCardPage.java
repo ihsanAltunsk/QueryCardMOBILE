@@ -108,6 +108,39 @@ public class QueryCardPage {
    @AndroidFindBy (xpath = "(//android.view.View[1]/android.widget.ImageView[1])[1]")
    public WebElement homePageLogo;
 
+   @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"Most Popular\"]")
+   public WebElement mostPopularLabel;
+
+   @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"S\"]")
+   public WebElement sizeS;
+
+   @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"1\"]")
+   public WebElement quantityNumber;
+
+   @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"Floral Print Midi Dress S $100.00 1\"]")
+   public WebElement shoppingCart;
+
+   @AndroidFindBy (xpath = "//android.widget.ImageView[@content-desc=\"Address\"]")
+   public WebElement addressButton;
+
+   @AndroidFindBy (xpath = "//android.widget.ImageView[@content-desc=\"Add New Address\"]")
+   public WebElement addNewAddressButton;
+
+   @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"Country\"]")
+   public WebElement countryBox;
+
+   @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"State\"]")
+   public WebElement stateBox;
+
+   @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"City\"]")
+   public WebElement cityBox;
+
+   @AndroidFindBy (xpath = "//android.widget.ScrollView/android.view.View/android.widget.EditText[4]")
+   public WebElement zipCodeBox;
+
+   @AndroidFindBy (xpath = "//android.widget.ScrollView/android.view.View/android.widget.EditText[5]")
+   public WebElement streetAddressBox;
+
    //===================================================================================================================
    //Azim
    @AndroidFindBy(xpath ="//android.view.View[@content-desc='Juniors']")
