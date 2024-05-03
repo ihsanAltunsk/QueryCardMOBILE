@@ -33,7 +33,7 @@ public class ReusableMethods extends Base {
         desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,ConfigReader.getProperty("appActivity"));
     }
 
-    public static void koordinatTiklama(int xKoordinat, int yKoordinat, int bekleme, WebElement slider) throws InterruptedException {
+    public static void koordinatTiklama(WebElement slider) throws InterruptedException {
         Point source = slider.getLocation();
         PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
         Sequence sequence = new Sequence(finger, 1);
@@ -156,14 +156,13 @@ public class ReusableMethods extends Base {
     }
 
     public static void signIn(String email, String password){
-        clickAndVerify(queryCardPage.profileButton);
-        clickAndVerify(queryCardPage.signInButton);
-        clickAndVerify(queryCardPage.useEmail);
-        clickAndVerify(queryCardPage.emailBox);
+        koordinatTiklamaMethodu(970,1700);
+        koordinatTiklamaMethodu(800,600);
+        koordinatTiklamaMethodu(896,547);
+        koordinatTiklamaMethodu(500,630);
         queryCardPage.emailBox.sendKeys(email);
-        clickAndVerify(queryCardPage.passwordBox);
+        koordinatTiklamaMethodu(500,870);
         queryCardPage.passwordBox.sendKeys(password);
-        clickAndVerify(queryCardPage.signIn);
+        koordinatTiklamaMethodu(540,1024);
     }
-
 }
