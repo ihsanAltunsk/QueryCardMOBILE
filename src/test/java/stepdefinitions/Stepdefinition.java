@@ -302,6 +302,20 @@ public class Stepdefinition extends Base {
     public void verify_that_products_are_filtered_by_price_from_cheap_to_expensive() {
 
     }
+    //US16-TC01
+    @Given("Click on the product selected for processing.")
+    public void click_on_the_product_selected_for_processing() {
+
+        koordinatTiklamaMethodu(760,1315);
+
+        koordinatTiklamaMethodu(230,1622);
+
+        koordinatTiklamaMethodu(124,976);
+        koordinatTiklamaMethodu(278,1359);
+        //koordinatTiklamaMethodu(972,1691);
+        //koordinatTiklamaMethodu(493,1443);
+    }
+
 
     //US19-TC01
     @Given("Logout link is displayed in Dashboard sidebar and it is verified to be active.")
@@ -312,6 +326,7 @@ public class Stepdefinition extends Base {
     public void the_logout_link_is_clicked_and_it_is_verified_that_you_can_successfully_log_out_of_the_site() {
 
     }
+
 
 //======================================================================================================================
     //Senayda US01 =============================================================
