@@ -334,8 +334,72 @@ public class Stepdefinition extends Base {
     public void user_verifies_the_site_s_logo_on_the_home_page() {
        assertTrue(queryCardPage.homePageLogo.isDisplayed());
     }
+// US03
+    @Given("User verifies products and product features on the homepage")
+    public void user_verifies_products_and_product_features_on_the_homepage() {
+        assertTrue(queryCardPage.mostPopularLabel.isDisplayed());
+        koordinatTiklamaMethodu(278,1063);
+   }
+    @Given("User confirms that the size-color and quantity features of the selected product are selectable")
+    public void user_confirms_that_the_size_color_and_quantity_features_of_the_selected_product_are_selectable() {
+    scrollDown(500,1);
+    clickAndVerify(queryCardPage.sizeS);
+    clickAndVerify(queryCardPage.quantityNumber);
+    }
+    @Given("User clicks on Add to Card button on the product detail page")
+    public void user_clicks_on_add_to_card_button_on_the_product_detail_page() {
+        clickAndVerify(queryCardPage.addToCartButton);
 
+    }
 
+    @Given("User verifies that the price, quantity, and subtotal information of the product added to the cart is visible")
+    public void user_verifies_that_the_price_quantity_and_subtotal_information_of_the_product_added_to_the_cart_is_visible() {
+        assertTrue(queryCardPage.shoppingCart.isDisplayed());
+
+    }
+// US14
+   @Given("User clicks and verifies Address button.")
+   public void user_clicks_and_verifies_address_button() {
+        clickAndVerify(queryCardPage.addressButton);
+}
+    @Given("User should be able to view, edit, delete addresses registered on the Adress page.")
+    public void user_should_be_able_to_view_edit_delete_addresses_registered_on_the_adress_page() {
+        koordinatTiklamaMethodu(891,424);
+        driver.navigate().back();
+        koordinatTiklamaMethodu(975,427);
+        koordinatTiklamaMethodu(307,1125);
+    }
+    @Given("User verifies Add New Address button and clicks.")
+    public void user_verifies_add_new_address_button_and_clicks() {
+        clickAndVerify(queryCardPage.addNewAddressButton);
+    }
+    @Given("User adds new address information.")
+    public void user_adds_new_address_information() {
+    name=faker.name().fullName();
+    clickAndSendKeys(queryCardPage.nameBox,name);
+
+    email=faker.internet().emailAddress();
+    clickAndSendKeys(queryCardPage.emailBox2,email);
+
+    phoneNumber=faker.phoneNumber().phoneNumber();
+    clickAndSendKeys(queryCardPage.passwordBox2,phoneNumber);
+
+    country=faker.country().currencyCode();
+    clickAndSendKeys(queryCardPage.countryBox,country);
+
+    state=faker.address().state();
+    clickAndSendKeys(queryCardPage.stateBox,state);
+
+    city=faker.address().city();
+    clickAndSendKeys(queryCardPage.cityBox,city);
+
+    zipCode=faker.address().zipCode();
+    clickAndSendKeys(queryCardPage.zipCodeBox,zipCode);
+
+    streetAddress=faker.address().streetAddress();
+    clickAndSendKeys(queryCardPage.streetAddressBox,streetAddress);
+    koordinatTiklamaMethodu(340,1695);
+    }
 
 //======================================================================================================================
     //Hümeyra
