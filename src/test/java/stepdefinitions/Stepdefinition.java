@@ -28,7 +28,6 @@ public class Stepdefinition extends Base {
     @Given("User clicks on password box and enters a valid password.")
     public void user_clicks_on_password_box_and_enters_a_valid_password() {
         password = faker.internet().password(6,10,true,true, true);
-        System.out.println(password);
         clickAndSendKeys(queryCardPage.passwordBox2, password);
     }
     @Given("User clicks on signUp button and verifies that he-she registered.")
