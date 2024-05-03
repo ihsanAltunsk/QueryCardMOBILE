@@ -14,16 +14,12 @@ public class QueryCardPage {
     }
 
    //ihsan
-   @AndroidFindBy (accessibility = "Sign In")
-   public WebElement signInButton;
    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='Profile']")
    public WebElement profileButton;
    @AndroidFindBy(xpath = "//android.widget.EditText[1]")
    public WebElement emailBox;
    @AndroidFindBy(xpath = "//android.widget.EditText[2]")
    public WebElement passwordBox;
-   @AndroidFindBy(xpath = "(//*[@content-desc='Sign In'])[2]")
-   public WebElement signIn;
    @AndroidFindBy(xpath = "(//*[@content-desc='Sign In'])[1]")
    public WebElement signText;
    @AndroidFindBy(xpath = "//*[@content-desc='*Use Email Instead']")
@@ -107,37 +103,26 @@ public class QueryCardPage {
    //senayda
    @AndroidFindBy (xpath = "(//android.view.View[1]/android.widget.ImageView[1])[1]")
    public WebElement homePageLogo;
-
    @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"Most Popular\"]")
    public WebElement mostPopularLabel;
-
    @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"S\"]")
    public WebElement sizeS;
-
    @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"1\"]")
    public WebElement quantityNumber;
-
    @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"Floral Print Midi Dress S $100.00 1\"]")
    public WebElement shoppingCart;
-
    @AndroidFindBy (xpath = "//android.widget.ImageView[@content-desc=\"Address\"]")
    public WebElement addressButton;
-
    @AndroidFindBy (xpath = "//android.widget.ImageView[@content-desc=\"Add New Address\"]")
    public WebElement addNewAddressButton;
-
    @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"Country\"]")
    public WebElement countryBox;
-
    @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"State\"]")
    public WebElement stateBox;
-
    @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"City\"]")
    public WebElement cityBox;
-
    @AndroidFindBy (xpath = "//android.widget.ScrollView/android.view.View/android.widget.EditText[4]")
    public WebElement zipCodeBox;
-
    @AndroidFindBy (xpath = "//android.widget.ScrollView/android.view.View/android.widget.EditText[5]")
    public WebElement streetAddressBox;
 

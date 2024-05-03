@@ -301,6 +301,7 @@ public class Stepdefinition extends Base {
     public void verify_that_products_are_filtered_by_price_from_cheap_to_expensive() {
 
     }
+
     //US16-TC01
     @Given("Click on the product selected for processing.")
     public void click_on_the_product_selected_for_processing() {
@@ -315,7 +316,6 @@ public class Stepdefinition extends Base {
         //koordinatTiklamaMethodu(493,1443);
     }
 
-
     //US19-TC01
     @Given("Logout link is displayed in Dashboard sidebar and it is verified to be active.")
     public void logout_link_is_displayed_in_dashboard_sidebar_and_it_is_verified_to_be_active() {
@@ -325,7 +325,6 @@ public class Stepdefinition extends Base {
     public void the_logout_link_is_clicked_and_it_is_verified_that_you_can_successfully_log_out_of_the_site() {
 
     }
-
 
 //======================================================================================================================
     //Senayda US01 =============================================================
@@ -348,13 +347,11 @@ public class Stepdefinition extends Base {
     @Given("User clicks on Add to Card button on the product detail page")
     public void user_clicks_on_add_to_card_button_on_the_product_detail_page() {
         clickAndVerify(queryCardPage.addToCartButton);
-
     }
 
     @Given("User verifies that the price, quantity, and subtotal information of the product added to the cart is visible")
     public void user_verifies_that_the_price_quantity_and_subtotal_information_of_the_product_added_to_the_cart_is_visible() {
         assertTrue(queryCardPage.shoppingCart.isDisplayed());
-
     }
 // US14
    @Given("User clicks and verifies Address button.")
