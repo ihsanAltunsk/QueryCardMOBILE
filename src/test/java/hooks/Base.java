@@ -21,8 +21,6 @@ public abstract class Base {
     public static DesiredCapabilities desiredCapabilities;
     public static QueryCardPage queryCardPage;
 
-
-
     public static void initialize(){
         faker = new Faker();
         random = new Random();

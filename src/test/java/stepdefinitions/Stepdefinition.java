@@ -417,23 +417,20 @@ public class Stepdefinition extends Base {
 
 //======================================================================================================================
     //Hümeyra
-@Given("Verify that most popular title is visible")
-public void verify_that_most_popular_title_is_visible() {
+    @Given("Verify that most popular title is visible")
+    public void verify_that_most_popular_title_is_visible() {
     assertTrue(queryCardPage.mostPopularLabel.isDisplayed());
 }
-
     @Given("User displays see All icon and clicks on it")
     public void user_displays_see_all_icon_and_clicks_on_it() {
        clickAndVerify(queryCardPage.seeAllIcon);
     }
-
     @Given("User displays current product lists under most popular title")
     public void user_displays_current_product_lists_under_most_popular_title() throws InterruptedException {
         Thread.sleep(3);
         assertTrue(queryCardPage.floralPrintMidiDress.isDisplayed());
         assertTrue(queryCardPage.classicCottonTshirt.isDisplayed());
     }
-
     @Given("Verify that user navigates to back")
     public void verify_that_user_navigates_to_back() {
        assertTrue(queryCardPage.homePageLogo.isDisplayed());
@@ -460,9 +457,8 @@ public void verify_that_most_popular_title_is_visible() {
     public void user_clicks_on_add_to_card_button() throws InterruptedException {
        ekranKaydirmaMethodu(547,1490,2,554,1300,1);
        Thread.sleep(3);
-      queryCardPage.addToCartButton.click();
-        Thread.sleep(3);
-
+       clickAndVerify(queryCardPage.addToCartButton);
+       Thread.sleep(3);
     }
     @Given("Verfy that user added product to add to cart")
     public void verfy_that_user_added_product_to_add_to_cart() {
@@ -475,23 +471,21 @@ public void verify_that_most_popular_title_is_visible() {
     @Given("User displays sort by,clicks on it and chooses price high to low")
     public void user_displays_sort_by_clicks_on_it_and_chooses_price_high_to_low() {
        clickAndVerify(queryCardPage.sortBy);
-       queryCardPage.priceHighToLow.click();
-
+       clickAndVerify(queryCardPage.priceHighToLow);
     }
     @Given("User clicks on filter icon")
     public void user_clicks_on_filter_icon() {
-        queryCardPage.filterIcon.click();
-
+        clickAndVerify(queryCardPage.filterIcon);
     }
     @Given("User displays brand,clicks on it and chooses urban casuals")
     public void user_displays_brand_clicks_on_it_and_chooses_urban_casuals() {
         clickAndVerify(queryCardPage.brands);
-        queryCardPage.urbanCasuals.click();
+        clickAndVerify(queryCardPage.urbanCasuals);
     }
     @Given("User displays size,clicks on it and chooses S")
     public void user_displays_size_clicks_on_it_and_chooses_s() {
        clickAndVerify(queryCardPage.size);
-       queryCardPage.Ssize.click();
+       clickAndVerify(queryCardPage.Ssize);
     }
     @Given("User displays color,clicks on it and chooses black")
     public void user_displays_color_clicks_on_it_and_chooses_black() {
@@ -504,16 +498,8 @@ public void verify_that_most_popular_title_is_visible() {
         assertTrue(queryCardPage.productFound.isDisplayed());
     }
 
-
-
-
-
-
-
-
 //======================================================================================================================
     //Murat
-
 
 
 
