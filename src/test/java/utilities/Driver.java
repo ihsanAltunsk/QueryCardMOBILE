@@ -3,7 +3,6 @@ package utilities;
 import hooks.Base;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.options.UiAutomator2Options;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -28,7 +27,6 @@ public class Driver extends Base {
         if (driver == null) {
             switch (ConfigReader.getProperty("platformName")) {
                 case "Android":
-                    options = new UiAutomator2Options();
                     options.setPlatformName("Android").setAutomationName("UiAutomator2");
                     options.setApp("src/test/java/Apps/querycart1.0.apk");
                     options.setAppPackage("com.inilabs.shopking");
