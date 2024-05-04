@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import hooks.Base;
 import io.cucumber.java.en.Given;
+import org.openqa.selenium.Keys;
 
 import static org.junit.Assert.*;
 import static utilities.ReusableMethods.*;
@@ -279,21 +280,19 @@ public class Stepdefinition extends Base {
     public void verify_that_products_are_filtered_by_price_from_cheap_to_expensive() {
 
     }
-
     //US16-TC01
     @Given("Click on the product selected for processing.")
-    public void click_on_the_product_selected_for_processing() {
+    public void click_on_the_product_selected_for_processing() throws InterruptedException {
+        Thread.sleep(1000);
+        queryCardPage.hompageBayankıyafetiElementi.sendKeys(Keys.ENTER);
+        //koordinatTiklamaMethodu(230,1308);//Ana saya bayan kıyafeti
+        koordinatTiklamaMethodu(84,1622);//Size
+        scrollDown(100,1);
+        koordinatTiklamaMethodu(263,1663);//Add Cart
+        koordinatTiklamaMethodu(972,1688);//Sepet butonu
+        koordinatTiklamaMethodu(471,1454);//Proced toCheckout
 
-        koordinatTiklamaMethodu(760,1315);
-
-        koordinatTiklamaMethodu(230,1622);
-
-        koordinatTiklamaMethodu(124,976);
-        koordinatTiklamaMethodu(278,1359);
-        //koordinatTiklamaMethodu(972,1691);
-        //koordinatTiklamaMethodu(493,1443);
     }
-
     //US19-TC01
     @Given("Logout link is displayed in Dashboard sidebar and it is verified to be active.")
     public void logout_link_is_displayed_in_dashboard_sidebar_and_it_is_verified_to_be_active() {
@@ -303,7 +302,48 @@ public class Stepdefinition extends Base {
     public void the_logout_link_is_clicked_and_it_is_verified_that_you_can_successfully_log_out_of_the_site() {
 
     }
+    //US23-TC01
+    @Given("Verify that the Wishlist icon is displayed.")
+    public void verify_that_the_wishlist_icon_is_displayed() {
+        queryCardPage.homePageWishlistButton.isDisplayed();
+    }
+    @Given("Click on the Wish List icon and verify that it is active.")
+    public void click_on_the_wish_list_icon_and_verify_that_it_is_active() {
+        clickAndVerify(queryCardPage.homePageWishlistButton);
+    }
+    @Given("Verify that the categories icon is displayed.")
+    public void verify_that_the_categories_icon_is_displayed() {
+        queryCardPage.homePageCategoryButton.isDisplayed();
+    }
+    @Given("Click on the categories icon and verify that it is active.")
+    public void click_on_the_categories_icon_and_verify_that_it_is_active() {
+        clickAndVerify(queryCardPage.homePageCategoryButton);
+    }
+    //US23-TC02
+    @Given("Click on the main page category icon.")
+    public void click_on_the_main_page_category_icon() {
+        queryCardPage.homePageCategoryButton.click();
+    }
+    @Given("Click on the men category product.")
+    public void click_on_the_men_category_product() throws InterruptedException {
+       Thread.sleep(100);
+       queryCardPage.menButton.sendKeys(Keys.ENTER);
+    }
+    @Given("Verify that the Product Wish List icon is displayed and active.")
+    public void verify_that_the_product_wish_list_icon_is_displayed_and_active() {
+        clickAndVerify(queryCardPage.corapFavoriButton);
+        queryCardPage.corapFavoriButton.isDisplayed();
 
+    }
+    @Given("The selected product is added to the favorite list.")
+    public void the_selected_product_is_added_to_the_favorite_list() {
+        koordinatTiklamaMethodu(449,405);
+        //driver.navigate().back();
+    }
+    @Given("Wishlist sayfasında eklenen urunler goruntulenir.")
+    public void wishlist_sayfasında_eklenen_urunler_goruntulenir() {
+
+    }
 //======================================================================================================================
     //Senayda US01 =============================================================
     @Given("User verifies the site's logo on the Home Page.")
