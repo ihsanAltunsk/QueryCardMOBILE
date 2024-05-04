@@ -4,6 +4,7 @@ package Page;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import net.bytebuddy.build.HashCodeAndEqualsPlugin;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -178,6 +179,65 @@ public class QueryCardPage {
 
    //===================================================================================================================
    //hümeyra
+   @AndroidFindBy(xpath ="//android.view.View[@content-desc='See All']")
+   public WebElement seeAllIcon;
+
+   // most popular baslıgın yanındaki see all iconuna tıklayınca açılan ürünlerin lokati
+   @AndroidFindBy(xpath = "(//*[@class='android.view.View'])[10]")
+   public WebElement floralPrintMidiDress;
+
+   @AndroidFindBy(xpath = "(//*[@class='android.view.View'])[12]")
+   public WebElement classicCottonTshirt;
+
+   @AndroidFindBy(xpath = "//*[@content-desc='Men']")
+   public WebElement manCategoryWindow;
+
+
+   @AndroidFindBy(className = "android.widget.ScrollView")
+   public WebElement adidas3StripesProduct;
+
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc='Black']")
+   public WebElement blackColor;
+
+
+   @AndroidFindBy(xpath = "//*[@text()='Success']")
+   public WebElement successAlert;
+
+   @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[3]")
+   public WebElement filterIcon;
+
+   @AndroidFindBy(xpath = "//*[@content-desc='Sort By']")
+   public WebElement sortBy;
+
+   @AndroidFindBy(xpath = "//*[@content-desc='Brands']")
+   public WebElement brands;
+// filter icon
+   @AndroidFindBy(xpath = "//*[@content-desc='size']")
+   public WebElement Size;
+
+   @AndroidFindBy(xpath = "//*[@content-desc='color']")
+   public WebElement color;
+
+   @AndroidFindBy(xpath = "//*[@content-desc='Price High To Low']")
+   public WebElement priceHighToLow;
+
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc='Urban Casuals']")
+   public WebElement urbanCasuals;
+
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc='(1 Products Found)']")
+   public WebElement productFound;
+
+   @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[16]")
+   public WebElement Ssize;
+
+
+
+
+
+
+
+
+
 
 
 
