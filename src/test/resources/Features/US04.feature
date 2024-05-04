@@ -4,7 +4,6 @@
     Background: User is directed to the signup page.
       * User clicks on profile button.
       * User clicks on signUp button and displays the signUp page
-      @deneme
       Scenario: User should sign up with correct information.
         * User clicks on name box and enters a valid name.
         * User chooses -*Use email instead- and clicks on email box then enters a valid email.

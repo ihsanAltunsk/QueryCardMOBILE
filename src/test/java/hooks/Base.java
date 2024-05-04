@@ -26,6 +26,7 @@ public abstract class Base {
     public static void initialize(){
         faker = new Faker();
         random = new Random();
+        options = new UiAutomator2Options();
         queryCardPage = new QueryCardPage();
         desiredCapabilities = new DesiredCapabilities();
     }

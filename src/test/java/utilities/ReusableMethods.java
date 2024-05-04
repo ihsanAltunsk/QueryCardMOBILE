@@ -155,9 +155,10 @@ public class ReusableMethods extends Base {
         element.sendKeys(context);
     }
 
-    public static void signIn(String email, String password){
+    public static void signIn(String email, String password) throws InterruptedException {
         koordinatTiklamaMethodu(970,1700);
         koordinatTiklamaMethodu(800,600);
+        Thread.sleep(5000);
         koordinatTiklamaMethodu(896,547);
         koordinatTiklamaMethodu(500,630);
         queryCardPage.emailBox.sendKeys(email);
