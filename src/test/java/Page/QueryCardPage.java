@@ -94,10 +94,38 @@ public class QueryCardPage {
    public WebElement colorWhite;
    @AndroidFindBy(accessibility = "Quantity:")
    public WebElement quantity;
-   @AndroidFindBy(accessibility = "My Account")
-   public WebElement dashboard;
+   @AndroidFindBy(accessibility = "Change Password")
+   public WebElement changePassword;
    @AndroidFindBy(accessibility = "Total Orders")
    public WebElement summaryInformation;
+
+   @AndroidFindBy(accessibility = "Old Password")
+   public WebElement oldPassword;
+
+   @AndroidFindBy(accessibility = "New Password")
+   public WebElement newPassword;
+
+   @AndroidFindBy(accessibility = "Confirm Password")
+   public WebElement confirmPassword;
+
+   @AndroidFindBy(xpath = "//*//android.widget.EditText[1]")
+   public WebElement oldPasswordBox;
+
+   @AndroidFindBy(xpath = "//*//android.widget.EditText[2]")
+   public WebElement newPasswordBox;
+
+   @AndroidFindBy(xpath = "//*//android.widget.EditText[3]")
+   public WebElement confirmPasswordBox;
+
+   @AndroidFindBy(accessibility = "Save Changes")
+   public WebElement saveChanges;
+
+   @AndroidFindBy(accessibility = "Reyyan Mert")
+   public WebElement passwordChangeVerify;
+
+   @AndroidFindBy(accessibility = "Password not matched")
+   public WebElement notMatchedText;
+
 
    //===================================================================================================================
    //senayda

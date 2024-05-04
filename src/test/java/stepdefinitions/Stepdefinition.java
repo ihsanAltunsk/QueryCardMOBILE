@@ -171,49 +171,27 @@ public class Stepdefinition extends Base {
     }
 
     //US17 TC01/02
-    @Given("Verify that the Change Password button is visible on the Dashboard page.")
+    @Given("On the Control Panel page, verify that the Change Password button appears and is clickable.")
     public void verify_that_the_change_password_button_is_visible_on_the_dashboard_page() {
-
+        clickAndVerify(queryCardPage.changePassword);
     }
-    @Given("Click the Change Password button.")
-    public void click_the_change_password_button() {
 
-    }
-    @Given("On the Change Password page, verify that the Old password, New password, Confirm password text boxes are visible.")
-    public void on_the_change_password_page_verify_that_the_old_password_new_password_confirm_password_text_boxes_are_visible() {
-
-    }
-    @Given("On the Change Password page, click the Old password box.")
-    public void on_the_change_password_page_click_the_old_password_box() {
-
-    }
-    @Given("Enter your current password in the Old password box.")
-    public void enter_your_current_password_in_the_old_password_box() {
-
-    }
-    @Given("Enter the new password in the New password box.")
-    public void enter_the_new_password_in_the_new_password_box() {
-
-    }
-    @Given("Enter the new password in the Confirm password box.")
-    public void enter_the_new_password_in_the_confirm_password_box() {
-
-    }
-    @Given("Press the Save Changes button.")
-    public void press_the_save_changes_button() {
+    @Given("Enter your current {string} in the old password box, {string} in the New password box, and {string} in the Confirm password box.")
+    public void enter_your_current_in_the_old_password_box_in_the_new_password_box_and_in_the_confirm_password_box(String password, String newpassword1, String newpassword2) {
+        clickAndSendKeys(queryCardPage.oldPasswordBox,password);
+        clickAndSendKeys(queryCardPage.newPasswordBox,newpassword1);
+        clickAndSendKeys(queryCardPage.confirmPasswordBox,newpassword2);
+        koordinatTiklamaMethodu(227,1853);
+        clickAndVerify(queryCardPage.saveChanges);
 
     }
     @Given("Verify that the password has been updated.")
     public void verify_that_the_password_has_been_updated() {
-
-    }
-    @Given("Enter the invalid password in the Confirm password box.")
-    public void enter_the_invalid_password_in_the_confirm_password_box() {
-
+        assertTrue(queryCardPage.passwordChangeVerify.isDisplayed());
     }
     @Given("Verify that Password not matched text is visible.")
     public void verify_that_password_not_matched_text_is_visible() {
-
+        assertTrue(queryCardPage.notMatchedText.isDisplayed());
     }
     //US24
     @Given("Verify that the cart icon is visible on the Home Page.")
