@@ -1,6 +1,7 @@
 package Page;
 
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
@@ -134,6 +135,18 @@ public class QueryCardPage {
    public WebElement JuniorsProduct;
    @AndroidFindBy(xpath ="//android.widget.ImageView[@content-desc='Logout']")
    public WebElement logoutButton;
+   @AndroidFindBy(xpath ="//android.widget.ImageView[@content-desc='Wishlist']")
+   public WebElement homePageWishlistButton;
+   @AndroidFindBy(xpath ="//android.widget.ImageView[@content-desc='Category']")
+   public WebElement homePageCategoryButton;
+   @AndroidFindBy(xpath ="(//*[@class='android.widget.ImageView'])[4]")
+   public WebElement corapFavoriButton;
+   @AndroidFindBy(xpath ="//android.view.View[@content-desc='Men']")
+   public WebElement menButton;
+   @AndroidFindBy(xpath ="(//*[@class='android.widget.ImageView'])[3]")
+   public WebElement juniorFiltrelemeElementi;
+   @AndroidFindBy(xpath ="(//*[@class='android.view.View'])[19]")
+   public WebElement hompageBayankıyafetiElementi;
 
    //===================================================================================================================
    //hümeyra
