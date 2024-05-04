@@ -399,6 +399,95 @@ public class Stepdefinition extends Base {
 
 //======================================================================================================================
     //Hümeyra
+@Given("Verify that most popular title is visible")
+public void verify_that_most_popular_title_is_visible() {
+    assertTrue(queryCardPage.mostPopularLabel.isDisplayed());
+}
+
+    @Given("User displays see All icon and clicks on it")
+    public void user_displays_see_all_icon_and_clicks_on_it() {
+       clickAndVerify(queryCardPage.seeAllIcon);
+    }
+
+    @Given("User displays current product lists under most popular title")
+    public void user_displays_current_product_lists_under_most_popular_title() throws InterruptedException {
+        Thread.sleep(3);
+        assertTrue(queryCardPage.floralPrintMidiDress.isDisplayed());
+        assertTrue(queryCardPage.classicCottonTshirt.isDisplayed());
+    }
+
+    @Given("Verify that user navigates to back")
+    public void verify_that_user_navigates_to_back() {
+       assertTrue(queryCardPage.homePageLogo.isDisplayed());
+    }
+    @Given("User displays men category window and clicks on it")
+    public void user_displays_men_category_window_and_clicks_on_it() {
+     clickAndVerify(queryCardPage.manCategoryWindow);
+    }
+    @Given("User chooses adidas3-stripes cushioned crew sock product")
+    public void user_chooses_adidas3_stripes_cushioned_crew_sock_product() throws InterruptedException {
+        Thread.sleep(4);
+       koordinatTiklamaMethodu(275,672);
+        Thread.sleep(3);
+    }
+    @Given("Verify that chosen product is visible")
+    public void verify_that_chosen_product_is_visible() {
+       assertTrue(queryCardPage.adidas3StripesProduct.isDisplayed());
+    }
+    @Given("User chooses black color")
+    public void user_chooses_black_color() {
+        queryCardPage.blackColor.click();
+    }
+    @Given("User clicks on Add to Card button")
+    public void user_clicks_on_add_to_card_button() throws InterruptedException {
+       ekranKaydirmaMethodu(547,1490,2,554,1300,1);
+       Thread.sleep(3);
+      queryCardPage.addToCartButton.click();
+        Thread.sleep(3);
+
+    }
+    @Given("Verfy that user added product to add to cart")
+    public void verfy_that_user_added_product_to_add_to_cart() {
+        assertTrue(queryCardPage.successAlert.isDisplayed());
+    }
+    @Given("User displays filter icon and clicks on it")
+    public void user_displays_filter_icon_and_clicks_on_it() {
+      koordinatTiklamaMethodu(1010,279);
+    }
+    @Given("User displays sort by,clicks on it and chooses price high to low")
+    public void user_displays_sort_by_clicks_on_it_and_chooses_price_high_to_low() {
+       clickAndVerify(queryCardPage.sortBy);
+       queryCardPage.priceHighToLow.click();
+
+    }
+    @Given("User clicks on filter icon")
+    public void user_clicks_on_filter_icon() {
+        queryCardPage.filterIcon.click();
+
+    }
+    @Given("User displays brand,clicks on it and chooses urban casuals")
+    public void user_displays_brand_clicks_on_it_and_chooses_urban_casuals() {
+        clickAndVerify(queryCardPage.brands);
+        queryCardPage.urbanCasuals.click();
+    }
+    @Given("User displays size,clicks on it and chooses S")
+    public void user_displays_size_clicks_on_it_and_chooses_s() {
+       clickAndVerify(queryCardPage.size);
+       queryCardPage.Ssize.click();
+    }
+    @Given("User displays color,clicks on it and chooses black")
+    public void user_displays_color_clicks_on_it_and_chooses_black() {
+        clickAndVerify(queryCardPage.color);
+        scrollDown(2000,1);
+        koordinatTiklamaMethodu(69,1575);
+    }
+    @Given("Verify that a product is visible")
+    public void verify_that_a_product_is_visible() {
+        assertTrue(queryCardPage.productFound.isDisplayed());
+    }
+
+
+
 
 
 
