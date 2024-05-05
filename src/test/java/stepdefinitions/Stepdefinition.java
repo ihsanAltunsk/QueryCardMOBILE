@@ -284,15 +284,59 @@ public class Stepdefinition extends Base {
     @Given("Click on the product selected for processing.")
     public void click_on_the_product_selected_for_processing() throws InterruptedException {
         Thread.sleep(1000);
-        queryCardPage.hompageBayankıyafetiElementi.sendKeys(Keys.ENTER);
-        //koordinatTiklamaMethodu(230,1308);//Ana saya bayan kıyafeti
+        clickAndVerify(queryCardPage.hompageBayankıyafetiElementi);
+        Thread.sleep(2000);
+        scrollDown(5,1);
+        Thread.sleep(2000);
         koordinatTiklamaMethodu(84,1622);//Size
-        scrollDown(100,1);
-        koordinatTiklamaMethodu(263,1663);//Add Cart
-        koordinatTiklamaMethodu(972,1688);//Sepet butonu
-        koordinatTiklamaMethodu(471,1454);//Proced toCheckout
+        Thread.sleep(4000);
+        queryCardPage.addToCartElementi.click();
+        Thread.sleep(3000);
+        clickAndVerify(queryCardPage.cartİcon);
+        queryCardPage.proceedToCheckoutButton.click();
+        Thread.sleep(3000);
+    }
+    @Given("It is verified that the Shipping Information is displayed.")
+    public void ıt_is_verified_that_the_shipping_ınformation_is_displayed() {
+     queryCardPage.shippingInformationText.isDisplayed();
+    }
+    @Given("Verify that the delivery button is displayed and active.")
+    public void verify_that_the_delivery_button_is_displayed_and_active() {
+    clickAndVerify(queryCardPage.deliveryButton);
+    }
+    @Given("Verify that the pickUp button is displayed and active.")
+    public void verify_that_the_pick_up_button_is_displayed_and_active() {
+        clickAndVerify(queryCardPage.pickUpButton);
+    }
+    @Given("It is verified that the order summary is displayed.")
+    public void ıt_is_verified_that_the_order_summary_is_displayed() {
+    queryCardPage.orderSummaryText.isDisplayed();
+    }
+    @Given("Verify that the save and pay button is displayed and active.")
+    public void verify_that_the_save_and_pay_button_is_displayed_and_active() {
+        clickAndVerify(queryCardPage.saveAndPayButton);
+    }
+    //US16-TC02
+    @Given("Shipping address information is verified to be displayed.")
+    public void shipping_address_information_is_verified_to_be_displayed() {
 
     }
+
+    @Given("Click the Delivery button.")
+    public void click_the_delivery_button() {
+
+    }
+
+    @Given("Shipping address information is updated.")
+    public void shipping_address_information_is_updated() {
+
+    }
+
+    @Given("Shipping  yeni adres bilgileri eklenir.")
+    public void shipping_yeni_adres_bilgileri_eklenir() {
+
+    }
+
     //US19-TC01
     @Given("Logout link is displayed in Dashboard sidebar and it is verified to be active.")
     public void logout_link_is_displayed_in_dashboard_sidebar_and_it_is_verified_to_be_active() {
@@ -340,8 +384,8 @@ public class Stepdefinition extends Base {
         koordinatTiklamaMethodu(449,405);
         //driver.navigate().back();
     }
-    @Given("Wishlist sayfasında eklenen urunler goruntulenir.")
-    public void wishlist_sayfasında_eklenen_urunler_goruntulenir() {
+    @Given("The products added on the Wishlist page are displayed.")
+    public void the_products_added_on_the_wishlist_page_are_displayed() {
 
     }
 //======================================================================================================================
