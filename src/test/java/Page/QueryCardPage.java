@@ -163,6 +163,23 @@ public class QueryCardPage {
    public WebElement juniorFiltrelemeElementi;
    @AndroidFindBy(xpath ="(//*[@class='android.view.View'])[19]")
    public WebElement hompageBayankıyafetiElementi;
+   @AndroidFindBy(xpath ="//android.widget.ImageView[@content-desc='Add To Cart']")
+   public WebElement addToCartElementi;
+   @AndroidFindBy(xpath ="(//*[@class='android.widget.ImageView'])[13]")
+   public WebElement cartİcon;
+   @AndroidFindBy(xpath ="//*[@content-desc='Proceed to Checkout']")
+   public WebElement proceedToCheckoutButton;
+   @AndroidFindBy(xpath ="//*[@content-desc='Shipping Information']")
+   public WebElement shippingInformationText;
+   @AndroidFindBy(xpath ="//*[@content-desc='Delivery']")
+   public WebElement deliveryButton;
+   @AndroidFindBy(xpath ="//android.view.View[@content-desc='Pick Up']")
+   public WebElement pickUpButton;
+   @AndroidFindBy(xpath ="//*[@content-desc='Order Summary']")
+   public WebElement orderSummaryText;
+   @AndroidFindBy(xpath ="//*[@content-desc='Save & Pay']")
+   public WebElement saveAndPayButton;
+
 
    //===================================================================================================================
    //hümeyra

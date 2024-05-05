@@ -18,4 +18,4 @@ Products added on Wishlist page should be displayed
   * Click on the men category product.
   * Verify that the Product Wish List icon is displayed and active.
   * The selected product is added to the favorite list.
-  * Wishlist sayfasında eklenen urunler goruntulenir.
+  * The products added on the Wishlist page are displayed.
