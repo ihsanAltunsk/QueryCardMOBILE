@@ -19,3 +19,4 @@ Products added on Wishlist page should be displayed
   * Verify that the Product Wish List icon is displayed and active.
   * The selected product is added to the favorite list.
   * The products added on the Wishlist page are displayed.
+  * The product added to the Wish List page is verified as deleted.

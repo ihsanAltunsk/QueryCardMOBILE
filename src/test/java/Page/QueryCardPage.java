@@ -179,8 +179,16 @@ public class QueryCardPage {
    public WebElement orderSummaryText;
    @AndroidFindBy(xpath ="//*[@content-desc='Save & Pay']")
    public WebElement saveAndPayButton;
-
-
+   @AndroidFindBy(xpath ="(//*[@class='android.widget.EditText'])[1]")
+   public WebElement updateFulnameBoxe;
+   @AndroidFindBy(xpath ="//android.widget.ScrollView/android.view.View/android.widget.EditText[1]")
+   public WebElement addAdresFulnameBoxe;
+   @AndroidFindBy(xpath ="//android.view.View[@content-desc='Sing In To See Your Info']")
+   public WebElement singInToSeeYourInfoText ;
+   @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='Profile']")
+   public WebElement logoutprofileButton;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc='(0  Products Found)']")
+   public WebElement wislistProductsFoundText;
    //===================================================================================================================
    //hümeyra
    @AndroidFindBy(xpath ="//android.view.View[@content-desc='See All']")
