@@ -3,6 +3,7 @@ package stepdefinitions;
 import hooks.Base;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.Keys;
+import utilities.ConfigReader;
 
 import static org.junit.Assert.*;
 import static utilities.ReusableMethods.*;
@@ -396,13 +397,14 @@ public class Stepdefinition extends Base {
     }
 // US03
     @Given("User verifies products and product features on the homepage")
-    public void user_verifies_products_and_product_features_on_the_homepage() {
+    public void user_verifies_products_and_product_features_on_the_homepage() throws InterruptedException {
         assertTrue(queryCardPage.mostPopularLabel.isDisplayed());
-        koordinatTiklamaMethodu(278,1063);
+        koordinatTiklamaMethodu(300,1300);
+        Thread.sleep(3000);
    }
     @Given("User confirms that the size-color and quantity features of the selected product are selectable")
     public void user_confirms_that_the_size_color_and_quantity_features_of_the_selected_product_are_selectable() {
-    scrollDown(500,1);
+    scrollDown(1500,1);
     clickAndVerify(queryCardPage.sizeS);
     clickAndVerify(queryCardPage.quantityNumber);
     }
@@ -414,6 +416,7 @@ public class Stepdefinition extends Base {
     @Given("User verifies that the price, quantity, and subtotal information of the product added to the cart is visible")
     public void user_verifies_that_the_price_quantity_and_subtotal_information_of_the_product_added_to_the_cart_is_visible() {
         assertTrue(queryCardPage.shoppingCart.isDisplayed());
+        assertFalse(queryCardPage.signInButton.isDisplayed());
     }
 // US14
    @Given("User clicks and verifies Address button.")
@@ -458,8 +461,43 @@ public class Stepdefinition extends Base {
     clickAndSendKeys(queryCardPage.streetAddressBox,streetAddress);
     koordinatTiklamaMethodu(340,1695);
     }
+// US20
+@Given("User clicks on SignIn button and displays the SignIn page")
+public void user_clicks_on_sign_in_button_and_displays_the_sign_in_page() {
+   clickAndVerify(queryCardPage.signInButton);
+}
+    @Given("User verifies Forgot Password button and clicks.")
+    public void user_verifies_forgot_password_button_and_clicks() {
+    clickAndVerify(queryCardPage.useEmailInsteadButton);
+    clickAndVerify(queryCardPage.forgotPasswordButton);
+    }
+    @Given("User verifies Back to SignIn button and clicks.")
+    public void user_verifies_back_to_sign_in_button_and_clicks() {
+        assertTrue(queryCardPage.backToSignInButton.isDisplayed());
+    }
+    @Given("User verifies Email button and clicks.")
+    public void user_verifies_email_button_and_clicks() {
+    clickAndVerify(queryCardPage.emailTextBox);
+    clickAndSendKeys(queryCardPage.emailTextBox,"senaydaakkaya@querycart.com");
+    }
+    @Given("User verifies Get OTP button and clicks.")
+    public void user_verifies_get_otp_button_and_clicks() {
+        clickAndVerify(queryCardPage.getOTPButton);
+    }
+    @Given("User sees new Password text box on the Reset Password page and clicks.")
+    public void user_sees_new_password_text_box_on_the_reset_password_page_and_clicks() {
+        clickAndSendKeys(queryCardPage.newPasswordTextBox,"Query.2905");
+    }
+    @Given("User sees Confirm Password text box on the Reset Password page and clicks.")
+    public void user_sees_confirm_password_text_box_on_the_reset_password_page_and_clicks() {
+        clickAndSendKeys(queryCardPage.confirmPasswordTextBox,"Query.2905");
+    }
+    @Given("User verifies Submit button and clicks.")
+    public void user_verifies_submit_button_and_clicks() {
+        clickAndVerify(queryCardPage.submitButton);
+    }
 
-//======================================================================================================================
+    //======================================================================================================================
     //Hümeyra
     @Given("Verify that most popular title is visible")
     public void verify_that_most_popular_title_is_visible() {
