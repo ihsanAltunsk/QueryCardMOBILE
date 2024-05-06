@@ -4,6 +4,8 @@ import hooks.Base;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.Keys;
 
+import javax.swing.*;
+
 import static org.junit.Assert.*;
 import static utilities.ReusableMethods.*;
 
@@ -286,13 +288,10 @@ public class Stepdefinition extends Base {
         Thread.sleep(1000);
         clickAndVerify(queryCardPage.hompageBayankıyafetiElementi);
         Thread.sleep(2000);
-        scrollDown(5,1);
-        Thread.sleep(2000);
         koordinatTiklamaMethodu(84,1622);//Size
-        Thread.sleep(4000);
+        scrollDown(1000,1);
         queryCardPage.addToCartElementi.click();
-        Thread.sleep(3000);
-        clickAndVerify(queryCardPage.cartİcon);
+        koordinatTiklamaMethodu(977,1685);
         queryCardPage.proceedToCheckoutButton.click();
         Thread.sleep(3000);
     }
@@ -321,29 +320,56 @@ public class Stepdefinition extends Base {
     public void shipping_address_information_is_verified_to_be_displayed() {
 
     }
-
     @Given("Click the Delivery button.")
     public void click_the_delivery_button() {
-
+        clickAndVerify(queryCardPage.deliveryButton);
     }
-
-    @Given("Shipping address information is updated.")
-    public void shipping_address_information_is_updated() {
-
+    @Given("It is verified that the shipping address information can be updated.")
+    public void ıt_is_verified_that_the_shipping_address_information_can_be_updated() {
+        koordinatTiklamaMethodu(763,380);
+        koordinatTiklamaMethodu(891,424);
+        queryCardPage.updateFulnameBoxe.clear();
+        queryCardPage.updateFulnameBoxe.sendKeys("Hasan Can");
+        koordinatTiklamaMethodu(292,1699);//Update adres button
+        String expectedUpdateText="Hasan Can";
+        String actualupdateText=queryCardPage.updateFulnameBoxe.getText();
+        assertEquals(actualupdateText,expectedUpdateText);
+        System.out.println(actualupdateText);
     }
+    @Given("Shipping verifies that new address information can be added.")
+    public void shipping_verifies_that_new_address_information_can_be_added() {
 
-    @Given("Shipping  yeni adres bilgileri eklenir.")
-    public void shipping_yeni_adres_bilgileri_eklenir() {
+        koordinatTiklamaMethodu(500,884);//Edd new adres button
+        queryCardPage.addAdresFulnameBoxe.click();
 
+        //   faker.name().firstName();
+        /*
+        Actions actions=new Actions(Driver.getDriver());
+        Faker faker=new Faker();
+
+        String fakeEmail=faker.internet().emailAddress();
+        actions.sendKeys(faker.name().firstName())
+                .sendKeys(Keys.TAB)
+                .sendKeys(faker.name().lastName())
+                .sendKeys(Keys.TAB)
+                .sendKeys(fakeEmail)
+
+         */
     }
 
     //US19-TC01
     @Given("Logout link is displayed in Dashboard sidebar and it is verified to be active.")
-    public void logout_link_is_displayed_in_dashboard_sidebar_and_it_is_verified_to_be_active() {
-        clickAndVerify(queryCardPage.logoutButton);
+    public void logout_link_is_displayed_in_dashboard_sidebar_and_it_is_verified_to_be_active() throws InterruptedException {
+        Thread.sleep(2000);
+        koordinatTiklamaMethodu(186,1589);
+        Thread.sleep(2000);
+        clickAndVerify(queryCardPage.logoutprofileButton);
+        Thread.sleep(2000);
     }
     @Given("The logout link is clicked and it is verified that you can successfully log out of the site.")
-    public void the_logout_link_is_clicked_and_it_is_verified_that_you_can_successfully_log_out_of_the_site() {
+    public void the_logout_link_is_clicked_and_it_is_verified_that_you_can_successfully_log_out_of_the_site() throws InterruptedException {
+        assertTrue(queryCardPage.singInToSeeYourInfoText.isDisplayed());
+
 
     }
     //US23-TC01
@@ -371,22 +397,28 @@ public class Stepdefinition extends Base {
     @Given("Click on the men category product.")
     public void click_on_the_men_category_product() throws InterruptedException {
        Thread.sleep(100);
-       queryCardPage.menButton.sendKeys(Keys.ENTER);
+        clickAndVerify(queryCardPage.menButton);
     }
     @Given("Verify that the Product Wish List icon is displayed and active.")
     public void verify_that_the_product_wish_list_icon_is_displayed_and_active() {
         clickAndVerify(queryCardPage.corapFavoriButton);
+        driver.navigate().back();
+        clickAndVerify(queryCardPage.homePageWishlistButton);
         queryCardPage.corapFavoriButton.isDisplayed();
 
     }
     @Given("The selected product is added to the favorite list.")
     public void the_selected_product_is_added_to_the_favorite_list() {
-        koordinatTiklamaMethodu(449,405);
-        //driver.navigate().back();
+        assertTrue(queryCardPage.wislistProductsFoundText.isDisplayed());
     }
     @Given("The products added on the Wishlist page are displayed.")
     public void the_products_added_on_the_wishlist_page_are_displayed() {
-
+        koordinatTiklamaMethodu(449,405);
+        assertTrue(queryCardPage.wislistProductsFoundText.isDisplayed());
+    }
+    @Given("The product added to the Wish List page is verified as deleted.")
+    public void the_product_added_to_the_wish_list_page_is_verified_as_deleted() {
+    assertTrue(queryCardPage.wislistProductsFoundText.isDisplayed());
     }
 //======================================================================================================================
     //Senayda US01 =============================================================
