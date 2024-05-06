@@ -195,58 +195,56 @@ public class Stepdefinition extends Base {
         assertTrue(queryCardPage.notMatchedText.isDisplayed());
     }
     //US24
-    @Given("Verify that the cart icon is visible on the Home Page.")
-    public void verify_that_the_cart_icon_is_visible_on_the_home_page() {
-
+    @Given("Click on one of the products on the home page.")
+    public void click_on_one_of_the_products_on_the_home_page() {
+        clickAndVerify(queryCardPage.seeAll);
+        koordinatTiklamaMethodu(280,542);
+        clickAndVerify(queryCardPage.productSizeHomePage);
+        clickAndVerify(queryCardPage.addToCartHomePage);
     }
-    @Given("Click the cart icon.")
-    public void click_the_cart_icon() {
-
+    @Given("Click the cart icon on the Home Page.")
+    public void click_the_cart_icon_on_the_home_page() {
+        clickAndVerify(queryCardPage.cartIcon);
     }
-    @Given("Verify that added products are displayed.")
-    public void verify_that_added_products_are_displayed() {
-
+    @Given("Verify that the added products are displayed.")
+    public void verify_that_the_added_products_are_displayed() {
+        clickAndVerify(queryCardPage.productVerifyPage);
     }
     @Given("Verify that subtotal information is visible.")
     public void verify_that_subtotal_information_is_visible() {
-
+        assertTrue(queryCardPage.subtotalVerify.isDisplayed());
     }
-    @Given("Click the trash can icon to delete the Junior School Bag product.")
-    public void click_the_trash_can_icon_to_delete_the_junior_school_bag_product() {
-
+    @Given("Click on the trash icon to delete the product.")
+    public void click_on_the_trash_icon_to_delete_the_product() {
+        clickAndVerify(queryCardPage.productDelete);
     }
-    @Given("Click the Go to Shopping button as there are no items left in the cart.")
-    public void click_the_go_to_shopping_button_as_there_are_no_items_left_in_the_cart() {
-
+    @Given("Since there are no items left in the cart, click the Go Shopping button.")
+    public void since_there_are_no_items_left_in_the_cart_click_the_go_shopping_button() {
+        clickAndVerify(queryCardPage.goToShopping);
     }
-    @Given("Click on one of the products on the home page.")
-    public void click_on_one_of_the_products_on_the_home_page() {
 
+    @Given("Click on the Cart icon to see the added product.")
+    public void click_on_the_cart_icon_to_see_the_added_product() {
+        clickAndVerify(queryCardPage.productSizeHomePage);
+        clickAndVerify(queryCardPage.addToCartHomePage);
     }
-    @Given("Click the size icon.")
-    public void click_the_size_icon() {
-
-    }
-    @Given("Click the Add to Cart button.")
-    public void click_the_add_to_cart_button() {
-
-    }
-    @Given("Click the Cart icon to see the added product.")
-    public void click_the_cart_icon_to_see_the_added_product() {
-
-    }
-    @Given("Click the address to send to in Shipping Address.")
-    public void click_the_address_to_send_to_in_shipping_address() {
-
-    }
-    @Given("Click the Proceed to Checkout button.")
+    @Given("Click the Proceed to checkout button.")
     public void click_the_proceed_to_checkout_button() {
-
+        clickAndVerify(queryCardPage.proceedToCheckout);
+    }
+    @Given("Click on the address to send to in the Shipping Address.")
+    public void click_on_the_address_to_send_to_in_the_shipping_address() {
+        koordinatTiklamaMethodu(471,600);
+    }
+    @Given("Click on the Continue Payment button.")
+    public void click_on_the_continue_payment_button() {
+       clickAndVerify(queryCardPage.savePay);
     }
     @Given("Verify that the payment page is displayed.")
     public void verify_that_the_payment_page_is_displayed() {
-
+       assertTrue(queryCardPage.paymentInformation.isDisplayed());
     }
+
 
 //======================================================================================================================
     //Azim

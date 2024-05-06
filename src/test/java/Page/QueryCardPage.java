@@ -97,12 +97,6 @@ public class QueryCardPage {
    public WebElement changePassword;
    @AndroidFindBy(accessibility = "Total Orders")
    public WebElement summaryInformation;
-   @AndroidFindBy(accessibility = "Old Password")
-   public WebElement oldPassword;
-   @AndroidFindBy(accessibility = "New Password")
-   public WebElement newPassword;
-   @AndroidFindBy(accessibility = "Confirm Password")
-   public WebElement confirmPassword;
    @AndroidFindBy(xpath = "//*//android.widget.EditText[1]")
    public WebElement oldPasswordBox;
    @AndroidFindBy(xpath = "//*//android.widget.EditText[2]")
@@ -115,6 +109,32 @@ public class QueryCardPage {
    public WebElement passwordChangeVerify;
    @AndroidFindBy(accessibility = "Password not matched")
    public WebElement notMatchedText;
+   @AndroidFindBy(xpath = "(//android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView)[3]")
+   public WebElement cartIcon;
+   @AndroidFindBy(accessibility = "Shopping Cart")
+   public WebElement productVerifyPage;
+   @AndroidFindBy(accessibility = "Subtotal")
+   public WebElement subtotalVerify;
+   @AndroidFindBy(accessibility = "Remove")
+   public WebElement productDelete;
+   @AndroidFindBy(accessibility = "Go to Shopping")
+   public WebElement goToShopping;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc='The North Face Arctic Parka 0 (0  Reviews) $400.00']")
+   public WebElement productArcticParkaHomePage;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc='Floral Print Midi Dress 0 (0  Reviews) $100.00']")
+   public WebElement productmidiDressHomePage;
+   @AndroidFindBy(accessibility = "M")
+   public WebElement productSizeHomePage;
+   @AndroidFindBy(accessibility = "Add To Cart")
+   public WebElement addToCartHomePage;
+   @AndroidFindBy(accessibility = "Payment Information")
+   public WebElement paymentInformation;
+   @AndroidFindBy(accessibility = "See All")
+   public WebElement seeAll;
+
+
+
+
 
    //===================================================================================================================
    //senayda
