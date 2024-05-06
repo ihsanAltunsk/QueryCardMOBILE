@@ -146,7 +146,7 @@ public class QueryCardPage {
    public WebElement sizeS;
    @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"1\"]")
    public WebElement quantityNumber;
-   @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"Floral Print Midi Dress S $100.00 1\"]")
+   @AndroidFindBy (xpath = "(//*[@class='android.view.View'])[8]")
    public WebElement shoppingCart;
    @AndroidFindBy (xpath = "//android.widget.ImageView[@content-desc=\"Address\"]")
    public WebElement addressButton;
@@ -162,6 +162,33 @@ public class QueryCardPage {
    public WebElement zipCodeBox;
    @AndroidFindBy (xpath = "//android.widget.ScrollView/android.view.View/android.widget.EditText[5]")
    public WebElement streetAddressBox;
+
+   @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"Sign In\"]")
+   public WebElement signInButton;
+
+   @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"*Use Email Instead\"]")
+   public WebElement useEmailInsteadButton;
+
+   @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"Forgot Password\"]")
+   public WebElement forgotPasswordButton;
+
+   @AndroidFindBy (xpath = "//android.widget.EditText")
+   public WebElement emailTextBox;
+
+   @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"Get OTP\"]")
+   public WebElement getOTPButton;
+
+   @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"Back to sign in\"]")
+   public WebElement backToSignInButton;
+
+   @AndroidFindBy (xpath = "//android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[1]")
+   public WebElement newPasswordTextBox;
+
+   @AndroidFindBy (xpath = "//android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[2]")
+   public WebElement confirmPasswordTextBox;
+
+   @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"Submit\"]")
+   public WebElement submitButton;
 
    //===================================================================================================================
    //Azim
