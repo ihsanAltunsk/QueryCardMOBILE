@@ -3,6 +3,7 @@ package stepdefinitions;
 import hooks.Base;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.Keys;
+import utilities.ConfigReader;
 
 import static org.junit.Assert.*;
 import static utilities.ReusableMethods.*;
@@ -541,6 +542,119 @@ public class Stepdefinition extends Base {
     public void verify_that_a_product_is_visible() {
         assertTrue(queryCardPage.productFound.isDisplayed());
     }
+    @Given("User displays edit profile link and clicks on it")
+    public void user_displays_edit_profile_link_and_clicks_on_it() {
+       clickAndVerify(queryCardPage.editProfile);
+    }
+
+    @Given("User displays full name box,clicks and sends {string}")
+    public void user_displays_full_name_box_clicks_and_sends(String newFullName) {
+    clickAndSendKeys(queryCardPage.fullNameBox,newFullName);
+    }
+
+    @Given("User displays email box,clicks and send {string}")
+    public void user_displays_email_box_clicks_and_send(String newEmail) {
+       clickAndSendKeys(queryCardPage.emailBox2,newEmail);
+    }
+
+    @Given("User displays phone box,clicks and send {string}")
+    public void user_displays_phone_box_clicks_and_send(String newPhone) {
+        clickAndSendKeys(queryCardPage.phoneBox,newPhone);
+        scrollDown(2000,1);
+    }
+
+    @Given("User displays save change button and clicks on it")
+    public void user_displays_save_change_button_and_clicks_on_it() {
+        clickAndVerify(queryCardPage.saveChanges);
+    }
+
+    @Given("Verify that all changes are saved")
+    public void verify_that_all_changes_are_saved() {
+        assertTrue(queryCardPage.updatedName.isDisplayed());
+    }
+
+    @Given("User displays order history pages and clicks on it")
+    public void user_displays_order_history_pages_and_clicks_on_it() {
+        clickAndVerify(queryCardPage.orderHistory);
+    }
+
+    @Given("User clicks on action button")
+    public void user_clicks_on_action_button() {
+        koordinatTiklamaMethodu(936,430);
+        scrollDown(500,1);
+    }
+
+    @Given("User displays return request button and clicks on it")
+    public void user_displays_return_request_button_and_clicks_on_it() {
+       clickAndVerify(queryCardPage.returnRequestButton);
+    }
+
+    @Given("User chooses her product")
+    public void user_chooses_her_product() {
+       clickAndVerify(queryCardPage.productRadioButton);
+    }
+
+    @Given("User clicks on return reason and chooses other")
+    public void user_clicks_on_return_reason_and_chooses_other() {
+        clickAndVerify(queryCardPage.returnReasonBox);
+        clickAndVerify(queryCardPage.other);
+    }
+
+    @Given("User clicks on return note and enter {string}")
+    public void user_clicks_on_return_note_and_enter_it_is_too_small(String returnNote) {
+        clickAndSendKeys(queryCardPage.returnNote,returnNote);
+        scrollDown(2000,1);
+    }
+
+    @Given("User displays request return and clicks on it")
+    public void user_displays_request_return_and_clicks_on_it() {
+    clickAndVerify(queryCardPage.requestReturnButton);
+    }
+
+    @Given("Verify that the return process has been started")
+    public void verify_that_the_return_process_has_been_started() {
+        assertTrue(queryCardPage.returnProcess.isDisplayed());
+    }
+
+    @Given("User clicks on signIn button")
+    public void user_clicks_on_sign_ın_button() {
+    clickAndVerify(queryCardPage.signIn);
+    }
+
+    @Given("User chooses -*Use email instead- and clicks on email box then enters a valid email {string}")
+    public void user_chooses_use_email_instead_and_clicks_on_email_box_then_enters_a_valid_email(String humeyraEmail) {
+        clickAndVerify(queryCardPage.useEmail);
+        clickAndVerify(queryCardPage.emailBox);
+        clickAndSendKeys(queryCardPage.emailBox,humeyraEmail);
+    }
+
+    @Given("User displays password box,clicks on it and enter a valid {string}")
+    public void user_displays_password_box_clicks_on_it_and_enter_a_valid(String password) {
+        clickAndVerify(queryCardPage.passwordBox);
+        queryCardPage.passwordBox.sendKeys(password);
+    }
+
+    @Given("User clicks on sign in button")
+    public void user_clicks_on_sign_in_button() {
+        clickAndVerify(queryCardPage.signIn);
+    }
+
+    @Given("User displays forgot password link and clicks on it")
+    public void user_displays_forgot_password_link_and_clicks_on_it() {
+       clickAndVerify(queryCardPage.forgotPassword);
+    }
+
+    @Given("Verify that user can access the forgot password page from the login page")
+    public void verify_that_user_can_access_the_forgot_password_page_from_the_login_page() {
+        assertTrue(queryCardPage.forgotPasswordLabel.isDisplayed());
+    }
+
+
+
+
+
+
+
 
 //======================================================================================================================
     //Murat

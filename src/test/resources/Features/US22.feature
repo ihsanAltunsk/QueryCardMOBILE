@@ -6,13 +6,13 @@
 
       * User logs in "humeyraEmail".
       * User clicks on profile button.
-      * User clicks on order history page
+      * User displays order history pages and clicks on it
       * User clicks on action button
       * User displays return request button and clicks on it
       * User chooses her product
       * User clicks on return reason and chooses other
-      * User clicks on return note and enter "it is too small"
-      * User clicks on reguest return
+      * User clicks on return note and enter "returnNote"
+      * User displays request return and clicks on it
       * Verify that the return process has been started
 
 
