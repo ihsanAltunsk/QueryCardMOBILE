@@ -218,6 +218,52 @@ public class QueryCardPage {
    @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[16]")
    public WebElement Ssize;
 
+   @AndroidFindBy(xpath = "//*[@content-desc='Edit Profile']")
+   public WebElement editProfile;
+
+   @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[1]")
+   public WebElement fullNameBox;
+
+   @AndroidFindBy(xpath = "//*//android.widget.EditText[3]")
+   public WebElement phoneBox;
+
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc='Humeyra Tayfn']")
+   public WebElement updatedName;
+
+   @AndroidFindBy(xpath = "//*[@content-desc='Return Request']")
+   public WebElement returnRequestButton;
+
+   @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[2]")
+   public WebElement productRadioButton;
+
+   @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[5]")
+   public WebElement returnReasonBox;
+
+   @AndroidFindBy(xpath = "//*[@content-desc='Other']")
+   public WebElement other;
+
+   @AndroidFindBy(xpath = "//android.widget.EditText")
+   public WebElement returnNote;
+
+   @AndroidFindBy(xpath = "(//*[@content-desc='Request Return'])[2]")
+   public WebElement requestReturnButton;
+
+   //return orders sayfasındakı urunumun locati
+   @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[2]")
+   public WebElement returnProcess;
+
+   @AndroidFindBy(xpath = "//*[@content-desc='Sign In']")
+   public WebElement signIn;
+
+   @AndroidFindBy(xpath = "//*[@content-desc='Forgot Password']")
+   public WebElement forgotPassword;
+
+   @AndroidFindBy(xpath = "//*[@content-desc='Forgot Password']")
+   public WebElement forgotPasswordLabel;
+
+
+
+
    //===================================================================================================================
    //murat
 

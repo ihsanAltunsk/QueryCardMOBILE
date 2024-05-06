@@ -152,6 +152,7 @@ public class ReusableMethods extends Base {
         assertTrue(element.isDisplayed());
         assertTrue(element.isEnabled());
         element.click();
+        element.clear();
         element.sendKeys(context);
     }
 
