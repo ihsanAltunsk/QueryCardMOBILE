@@ -97,12 +97,6 @@ public class QueryCardPage {
    public WebElement changePassword;
    @AndroidFindBy(accessibility = "Total Orders")
    public WebElement summaryInformation;
-   @AndroidFindBy(accessibility = "Old Password")
-   public WebElement oldPassword;
-   @AndroidFindBy(accessibility = "New Password")
-   public WebElement newPassword;
-   @AndroidFindBy(accessibility = "Confirm Password")
-   public WebElement confirmPassword;
    @AndroidFindBy(xpath = "//*//android.widget.EditText[1]")
    public WebElement oldPasswordBox;
    @AndroidFindBy(xpath = "//*//android.widget.EditText[2]")
@@ -115,6 +109,32 @@ public class QueryCardPage {
    public WebElement passwordChangeVerify;
    @AndroidFindBy(accessibility = "Password not matched")
    public WebElement notMatchedText;
+   @AndroidFindBy(xpath = "(//android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView)[3]")
+   public WebElement cartIcon;
+   @AndroidFindBy(accessibility = "Shopping Cart")
+   public WebElement productVerifyPage;
+   @AndroidFindBy(accessibility = "Subtotal")
+   public WebElement subtotalVerify;
+   @AndroidFindBy(accessibility = "Remove")
+   public WebElement productDelete;
+   @AndroidFindBy(accessibility = "Go to Shopping")
+   public WebElement goToShopping;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc='The North Face Arctic Parka 0 (0  Reviews) $400.00']")
+   public WebElement productArcticParkaHomePage;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc='Floral Print Midi Dress 0 (0  Reviews) $100.00']")
+   public WebElement productmidiDressHomePage;
+   @AndroidFindBy(accessibility = "M")
+   public WebElement productSizeHomePage;
+   @AndroidFindBy(accessibility = "Add To Cart")
+   public WebElement addToCartHomePage;
+   @AndroidFindBy(accessibility = "Payment Information")
+   public WebElement paymentInformation;
+   @AndroidFindBy(accessibility = "See All")
+   public WebElement seeAll;
+
+
+
+
 
    //===================================================================================================================
    //senayda
@@ -206,8 +226,16 @@ public class QueryCardPage {
    public WebElement orderSummaryText;
    @AndroidFindBy(xpath ="//*[@content-desc='Save & Pay']")
    public WebElement saveAndPayButton;
-
-
+   @AndroidFindBy(xpath ="(//*[@class='android.widget.EditText'])[1]")
+   public WebElement updateFulnameBoxe;
+   @AndroidFindBy(xpath ="//android.widget.ScrollView/android.view.View/android.widget.EditText[1]")
+   public WebElement addAdresFulnameBoxe;
+   @AndroidFindBy(xpath ="//android.view.View[@content-desc='Sing In To See Your Info']")
+   public WebElement singInToSeeYourInfoText ;
+   @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='Profile']")
+   public WebElement logoutprofileButton;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc='(0  Products Found)']")
+   public WebElement wislistProductsFoundText;
    //===================================================================================================================
    //hümeyra
    @AndroidFindBy(xpath ="//android.view.View[@content-desc='See All']")
@@ -244,6 +272,52 @@ public class QueryCardPage {
    public WebElement productFound;
    @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[16]")
    public WebElement Ssize;
+
+   @AndroidFindBy(xpath = "//*[@content-desc='Edit Profile']")
+   public WebElement editProfile;
+
+   @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[1]")
+   public WebElement fullNameBox;
+
+   @AndroidFindBy(xpath = "//*//android.widget.EditText[3]")
+   public WebElement phoneBox;
+
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc='Humeyra Tayfn']")
+   public WebElement updatedName;
+
+   @AndroidFindBy(xpath = "//*[@content-desc='Return Request']")
+   public WebElement returnRequestButton;
+
+   @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[2]")
+   public WebElement productRadioButton;
+
+   @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[5]")
+   public WebElement returnReasonBox;
+
+   @AndroidFindBy(xpath = "//*[@content-desc='Other']")
+   public WebElement other;
+
+   @AndroidFindBy(xpath = "//android.widget.EditText")
+   public WebElement returnNote;
+
+   @AndroidFindBy(xpath = "(//*[@content-desc='Request Return'])[2]")
+   public WebElement requestReturnButton;
+
+   //return orders sayfasındakı urunumun locati
+   @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[2]")
+   public WebElement returnProcess;
+
+   @AndroidFindBy(xpath = "//*[@content-desc='Sign In']")
+   public WebElement signIn;
+
+   @AndroidFindBy(xpath = "//*[@content-desc='Forgot Password']")
+   public WebElement forgotPassword;
+
+   @AndroidFindBy(xpath = "//*[@content-desc='Forgot Password']")
+   public WebElement forgotPasswordLabel;
+
+
+
 
    //===================================================================================================================
    //murat

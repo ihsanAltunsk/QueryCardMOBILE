@@ -4,6 +4,7 @@ import hooks.Base;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.Keys;
 import utilities.ConfigReader;
+import javax.swing.*;
 
 import static org.junit.Assert.*;
 import static utilities.ReusableMethods.*;
@@ -196,58 +197,56 @@ public class Stepdefinition extends Base {
         assertTrue(queryCardPage.notMatchedText.isDisplayed());
     }
     //US24
-    @Given("Verify that the cart icon is visible on the Home Page.")
-    public void verify_that_the_cart_icon_is_visible_on_the_home_page() {
-
+    @Given("Click on one of the products on the home page.")
+    public void click_on_one_of_the_products_on_the_home_page() {
+        clickAndVerify(queryCardPage.seeAll);
+        koordinatTiklamaMethodu(280,542);
+        clickAndVerify(queryCardPage.productSizeHomePage);
+        clickAndVerify(queryCardPage.addToCartHomePage);
     }
-    @Given("Click the cart icon.")
-    public void click_the_cart_icon() {
-
+    @Given("Click the cart icon on the Home Page.")
+    public void click_the_cart_icon_on_the_home_page() {
+        clickAndVerify(queryCardPage.cartIcon);
     }
-    @Given("Verify that added products are displayed.")
-    public void verify_that_added_products_are_displayed() {
-
+    @Given("Verify that the added products are displayed.")
+    public void verify_that_the_added_products_are_displayed() {
+        clickAndVerify(queryCardPage.productVerifyPage);
     }
     @Given("Verify that subtotal information is visible.")
     public void verify_that_subtotal_information_is_visible() {
-
+        assertTrue(queryCardPage.subtotalVerify.isDisplayed());
     }
-    @Given("Click the trash can icon to delete the Junior School Bag product.")
-    public void click_the_trash_can_icon_to_delete_the_junior_school_bag_product() {
-
+    @Given("Click on the trash icon to delete the product.")
+    public void click_on_the_trash_icon_to_delete_the_product() {
+        clickAndVerify(queryCardPage.productDelete);
     }
-    @Given("Click the Go to Shopping button as there are no items left in the cart.")
-    public void click_the_go_to_shopping_button_as_there_are_no_items_left_in_the_cart() {
-
+    @Given("Since there are no items left in the cart, click the Go Shopping button.")
+    public void since_there_are_no_items_left_in_the_cart_click_the_go_shopping_button() {
+        clickAndVerify(queryCardPage.goToShopping);
     }
-    @Given("Click on one of the products on the home page.")
-    public void click_on_one_of_the_products_on_the_home_page() {
 
+    @Given("Click on the Cart icon to see the added product.")
+    public void click_on_the_cart_icon_to_see_the_added_product() {
+        clickAndVerify(queryCardPage.productSizeHomePage);
+        clickAndVerify(queryCardPage.addToCartHomePage);
     }
-    @Given("Click the size icon.")
-    public void click_the_size_icon() {
-
-    }
-    @Given("Click the Add to Cart button.")
-    public void click_the_add_to_cart_button() {
-
-    }
-    @Given("Click the Cart icon to see the added product.")
-    public void click_the_cart_icon_to_see_the_added_product() {
-
-    }
-    @Given("Click the address to send to in Shipping Address.")
-    public void click_the_address_to_send_to_in_shipping_address() {
-
-    }
-    @Given("Click the Proceed to Checkout button.")
+    @Given("Click the Proceed to checkout button.")
     public void click_the_proceed_to_checkout_button() {
-
+        clickAndVerify(queryCardPage.proceedToCheckout);
+    }
+    @Given("Click on the address to send to in the Shipping Address.")
+    public void click_on_the_address_to_send_to_in_the_shipping_address() {
+        koordinatTiklamaMethodu(471,600);
+    }
+    @Given("Click on the Continue Payment button.")
+    public void click_on_the_continue_payment_button() {
+       clickAndVerify(queryCardPage.savePay);
     }
     @Given("Verify that the payment page is displayed.")
     public void verify_that_the_payment_page_is_displayed() {
-
+       assertTrue(queryCardPage.paymentInformation.isDisplayed());
     }
+
 
 //======================================================================================================================
     //Azim
@@ -287,13 +286,10 @@ public class Stepdefinition extends Base {
         Thread.sleep(1000);
         clickAndVerify(queryCardPage.hompageBayankıyafetiElementi);
         Thread.sleep(2000);
-        scrollDown(5,1);
-        Thread.sleep(2000);
         koordinatTiklamaMethodu(84,1622);//Size
-        Thread.sleep(4000);
+        scrollDown(1000,1);
         queryCardPage.addToCartElementi.click();
-        Thread.sleep(3000);
-        clickAndVerify(queryCardPage.cartİcon);
+        koordinatTiklamaMethodu(977,1685);
         queryCardPage.proceedToCheckoutButton.click();
         Thread.sleep(3000);
     }
@@ -322,29 +318,56 @@ public class Stepdefinition extends Base {
     public void shipping_address_information_is_verified_to_be_displayed() {
 
     }
-
     @Given("Click the Delivery button.")
     public void click_the_delivery_button() {
-
+        clickAndVerify(queryCardPage.deliveryButton);
     }
-
-    @Given("Shipping address information is updated.")
-    public void shipping_address_information_is_updated() {
-
+    @Given("It is verified that the shipping address information can be updated.")
+    public void ıt_is_verified_that_the_shipping_address_information_can_be_updated() {
+        koordinatTiklamaMethodu(763,380);
+        koordinatTiklamaMethodu(891,424);
+        queryCardPage.updateFulnameBoxe.clear();
+        queryCardPage.updateFulnameBoxe.sendKeys("Hasan Can");
+        koordinatTiklamaMethodu(292,1699);//Update adres button
+        String expectedUpdateText="Hasan Can";
+        String actualupdateText=queryCardPage.updateFulnameBoxe.getText();
+        assertEquals(actualupdateText,expectedUpdateText);
+        System.out.println(actualupdateText);
     }
+    @Given("Shipping verifies that new address information can be added.")
+    public void shipping_verifies_that_new_address_information_can_be_added() {
 
-    @Given("Shipping  yeni adres bilgileri eklenir.")
-    public void shipping_yeni_adres_bilgileri_eklenir() {
+        koordinatTiklamaMethodu(500,884);//Edd new adres button
+        queryCardPage.addAdresFulnameBoxe.click();
 
+        //   faker.name().firstName();
+        /*
+        Actions actions=new Actions(Driver.getDriver());
+        Faker faker=new Faker();
+
+        String fakeEmail=faker.internet().emailAddress();
+        actions.sendKeys(faker.name().firstName())
+                .sendKeys(Keys.TAB)
+                .sendKeys(faker.name().lastName())
+                .sendKeys(Keys.TAB)
+                .sendKeys(fakeEmail)
+
+         */
     }
 
     //US19-TC01
     @Given("Logout link is displayed in Dashboard sidebar and it is verified to be active.")
-    public void logout_link_is_displayed_in_dashboard_sidebar_and_it_is_verified_to_be_active() {
-        clickAndVerify(queryCardPage.logoutButton);
+    public void logout_link_is_displayed_in_dashboard_sidebar_and_it_is_verified_to_be_active() throws InterruptedException {
+        Thread.sleep(2000);
+        koordinatTiklamaMethodu(186,1589);
+        Thread.sleep(2000);
+        clickAndVerify(queryCardPage.logoutprofileButton);
+        Thread.sleep(2000);
     }
     @Given("The logout link is clicked and it is verified that you can successfully log out of the site.")
-    public void the_logout_link_is_clicked_and_it_is_verified_that_you_can_successfully_log_out_of_the_site() {
+    public void the_logout_link_is_clicked_and_it_is_verified_that_you_can_successfully_log_out_of_the_site() throws InterruptedException {
+        assertTrue(queryCardPage.singInToSeeYourInfoText.isDisplayed());
+
 
     }
     //US23-TC01
@@ -372,22 +395,28 @@ public class Stepdefinition extends Base {
     @Given("Click on the men category product.")
     public void click_on_the_men_category_product() throws InterruptedException {
        Thread.sleep(100);
-       queryCardPage.menButton.sendKeys(Keys.ENTER);
+        clickAndVerify(queryCardPage.menButton);
     }
     @Given("Verify that the Product Wish List icon is displayed and active.")
     public void verify_that_the_product_wish_list_icon_is_displayed_and_active() {
         clickAndVerify(queryCardPage.corapFavoriButton);
+        driver.navigate().back();
+        clickAndVerify(queryCardPage.homePageWishlistButton);
         queryCardPage.corapFavoriButton.isDisplayed();
 
     }
     @Given("The selected product is added to the favorite list.")
     public void the_selected_product_is_added_to_the_favorite_list() {
-        koordinatTiklamaMethodu(449,405);
-        //driver.navigate().back();
+        assertTrue(queryCardPage.wislistProductsFoundText.isDisplayed());
     }
     @Given("The products added on the Wishlist page are displayed.")
     public void the_products_added_on_the_wishlist_page_are_displayed() {
-
+        koordinatTiklamaMethodu(449,405);
+        assertTrue(queryCardPage.wislistProductsFoundText.isDisplayed());
+    }
+    @Given("The product added to the Wish List page is verified as deleted.")
+    public void the_product_added_to_the_wish_list_page_is_verified_as_deleted() {
+    assertTrue(queryCardPage.wislistProductsFoundText.isDisplayed());
     }
 //======================================================================================================================
     //Senayda US01 =============================================================
@@ -579,6 +608,119 @@ public void user_clicks_on_sign_in_button_and_displays_the_sign_in_page() {
     public void verify_that_a_product_is_visible() {
         assertTrue(queryCardPage.productFound.isDisplayed());
     }
+    @Given("User displays edit profile link and clicks on it")
+    public void user_displays_edit_profile_link_and_clicks_on_it() {
+       clickAndVerify(queryCardPage.editProfile);
+    }
+
+    @Given("User displays full name box,clicks and sends {string}")
+    public void user_displays_full_name_box_clicks_and_sends(String newFullName) {
+    clickAndSendKeys(queryCardPage.fullNameBox,newFullName);
+    }
+
+    @Given("User displays email box,clicks and send {string}")
+    public void user_displays_email_box_clicks_and_send(String newEmail) {
+       clickAndSendKeys(queryCardPage.emailBox2,newEmail);
+    }
+
+    @Given("User displays phone box,clicks and send {string}")
+    public void user_displays_phone_box_clicks_and_send(String newPhone) {
+        clickAndSendKeys(queryCardPage.phoneBox,newPhone);
+        scrollDown(2000,1);
+    }
+
+    @Given("User displays save change button and clicks on it")
+    public void user_displays_save_change_button_and_clicks_on_it() {
+        clickAndVerify(queryCardPage.saveChanges);
+    }
+
+    @Given("Verify that all changes are saved")
+    public void verify_that_all_changes_are_saved() {
+        assertTrue(queryCardPage.updatedName.isDisplayed());
+    }
+
+    @Given("User displays order history pages and clicks on it")
+    public void user_displays_order_history_pages_and_clicks_on_it() {
+        clickAndVerify(queryCardPage.orderHistory);
+    }
+
+    @Given("User clicks on action button")
+    public void user_clicks_on_action_button() {
+        koordinatTiklamaMethodu(936,430);
+        scrollDown(500,1);
+    }
+
+    @Given("User displays return request button and clicks on it")
+    public void user_displays_return_request_button_and_clicks_on_it() {
+       clickAndVerify(queryCardPage.returnRequestButton);
+    }
+
+    @Given("User chooses her product")
+    public void user_chooses_her_product() {
+       clickAndVerify(queryCardPage.productRadioButton);
+    }
+
+    @Given("User clicks on return reason and chooses other")
+    public void user_clicks_on_return_reason_and_chooses_other() {
+        clickAndVerify(queryCardPage.returnReasonBox);
+        clickAndVerify(queryCardPage.other);
+    }
+
+    @Given("User clicks on return note and enter {string}")
+    public void user_clicks_on_return_note_and_enter_it_is_too_small(String returnNote) {
+        clickAndSendKeys(queryCardPage.returnNote,returnNote);
+        scrollDown(2000,1);
+    }
+
+    @Given("User displays request return and clicks on it")
+    public void user_displays_request_return_and_clicks_on_it() {
+    clickAndVerify(queryCardPage.requestReturnButton);
+    }
+
+    @Given("Verify that the return process has been started")
+    public void verify_that_the_return_process_has_been_started() {
+        assertTrue(queryCardPage.returnProcess.isDisplayed());
+    }
+
+    @Given("User clicks on signIn button")
+    public void user_clicks_on_sign_ın_button() {
+    clickAndVerify(queryCardPage.signIn);
+    }
+
+    @Given("User chooses -*Use email instead- and clicks on email box then enters a valid email {string}")
+    public void user_chooses_use_email_instead_and_clicks_on_email_box_then_enters_a_valid_email(String humeyraEmail) {
+        clickAndVerify(queryCardPage.useEmail);
+        clickAndVerify(queryCardPage.emailBox);
+        clickAndSendKeys(queryCardPage.emailBox,humeyraEmail);
+    }
+
+    @Given("User displays password box,clicks on it and enter a valid {string}")
+    public void user_displays_password_box_clicks_on_it_and_enter_a_valid(String password) {
+        clickAndVerify(queryCardPage.passwordBox);
+        queryCardPage.passwordBox.sendKeys(password);
+    }
+
+    @Given("User clicks on sign in button")
+    public void user_clicks_on_sign_in_button() {
+        clickAndVerify(queryCardPage.signIn);
+    }
+
+    @Given("User displays forgot password link and clicks on it")
+    public void user_displays_forgot_password_link_and_clicks_on_it() {
+       clickAndVerify(queryCardPage.forgotPassword);
+    }
+
+    @Given("Verify that user can access the forgot password page from the login page")
+    public void verify_that_user_can_access_the_forgot_password_page_from_the_login_page() {
+        assertTrue(queryCardPage.forgotPasswordLabel.isDisplayed());
+    }
+
+
+
+
+
+
+
 
 //======================================================================================================================
     //Murat
