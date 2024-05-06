@@ -1,6 +1,6 @@
 #Reporter : Reyyan Mert
 #US Priority : HIGH
-  @wip
+
   Feature: As a registered user, I want to change the password on my dashboard page.
     Scenario Outline:Pozitif Password
 
