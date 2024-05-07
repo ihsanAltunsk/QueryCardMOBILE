@@ -70,7 +70,8 @@ public class Stepdefinition extends Base {
         clickAndSendKeys(queryCardPage.passwordBox2, password);
     }
     @Given("User clicks on the product and verifies that he-she navigated to the product page.")
-    public void user_clicks_on_the_product_and_verifies_that_he_she_navigated_to_the_product_page() {
+    public void user_clicks_on_the_product_and_verifies_that_he_she_navigated_to_the_product_page() throws InterruptedException {
+        Thread.sleep(1000);
         koordinatTiklamaMethodu(275,1300);
         assertTrue(queryCardPage.productHeader.isDisplayed());
     }
@@ -134,10 +135,22 @@ public class Stepdefinition extends Base {
         clickAndVerify(queryCardPage.savePay);
     }
     @Given("User selects stripe payment method and enters the credentials")
-    public void user_selects_stripe_payment_method_and_enters_the_credentials() {
+    public void user_selects_stripe_payment_method_and_enters_the_credentials() throws InterruptedException {
         assertTrue(queryCardPage.paymentMethod.isDisplayed());
         clickAndVerify(queryCardPage.stripe);
         clickAndVerify(queryCardPage.confirmOrderButton);
+        card_number = 4242424242424242L;
+        cc = 1234;
+        cvc = 567;
+        zip = 123;
+        Thread.sleep(1000);
+        clickAndSendKeys(queryCardPage.nameBox, Long.toString(card_number));
+        actions.sendKeys(Keys.TAB).
+                sendKeys(Integer.toString(cc)).
+                sendKeys(Integer.toString(cvc)).
+                sendKeys(Integer.toString(zip)).
+                perform();
+        Thread.sleep(1000);
     }
 
 //======================================================================================================================

@@ -7,5 +7,3 @@
       * User displays the receipt.
       * User navigates to back for 1 time.
       * User cancels the order and verifies that the order is canceled.
-    Scenario:
-      * User logs in "ihsanEmail".
