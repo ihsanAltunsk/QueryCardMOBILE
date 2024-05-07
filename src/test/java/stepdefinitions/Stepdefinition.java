@@ -154,27 +154,84 @@ public class Stepdefinition extends Base {
     }
 
 //======================================================================================================================
-    //Reyyan US12 TC01/02
+//Reyyan US12 TC01/02
     @Given("Verify that the Women's Category window is displayed and clicked on the home page.")
     public void verify_that_the_women_s_category_window_is_displayed_on_the_homepage() throws InterruptedException {
+        Thread.sleep(3000);
         ekranKaydirmaMethodu(900,750,500,170,750,5);
+        Thread.sleep(3000);
         clickAndVerify(queryCardPage.womanButton);
+        Thread.sleep(2000);
     }
     @Given("Click on a product on the Products page and verify that it is displayed")
     public void click_a_product_on_the_products_page() throws InterruptedException {
-        koordinatTiklamaMethodu(300, 560);
-        assertTrue(queryCardPage.womanShoes.isDisplayed());
+        clickAndVerify(queryCardPage.womanShoes);
     }
     @Given("Verify that the filtering icon {string} and {string} is visible and active.")
-    public void verify_that_the_filtering_icon_and_is_visible_and_active(String string, String string2) {
-        ekranKaydirmaMethodu(553,1745,500,595,1093,1);
+    public void verify_that_the_filtering_icon_and_is_visible_and_active(String string, String string2) throws InterruptedException {
+        Thread.sleep(2000);
         clickAndVerify(queryCardPage.colorWhite);
-        assertTrue(queryCardPage.quantity.isDisplayed());
-        koordinatTiklamaMethodu(293,982);
+        Thread.sleep(2000);
+        ekranKaydirmaMethodu(504,1754,500,504,1332,1);
+        Thread.sleep(2000);
+        clickAndVerify(queryCardPage.quantity);
     }
     @Given("Verify that a product's add to cart button is active on the products page.")
-    public void verify_that_a_product_s_add_to_cart_button_is_active_on_the_products_page() {
+    public void verify_that_a_product_s_add_to_cart_button_is_active_on_the_products_page() throws InterruptedException {
+        Thread.sleep(1000);
         clickAndVerify(queryCardPage.addToCartButton);
+    }
+    @Given("Inside the filter the Brand filters appear and verify that they are active.")
+    public void ınside_the_filter_the_brand_filters_appear_and_verify_that_they_are_active() throws InterruptedException {
+        Thread.sleep(2000);
+        clickAndVerify(queryCardPage.brands);
+        Thread.sleep(2000);
+        clickAndVerify(queryCardPage.brandConverse);
+        Thread.sleep(2000);
+        clickAndVerify(queryCardPage.xButonu);
+        Thread.sleep(2000);
+        assertTrue(queryCardPage.brandFoundText.isDisplayed());
+        Thread.sleep(1000);
+        clickAndVerify(queryCardPage.converseFoundProduct);
+        Thread.sleep(1000);
+    }
+    @Given("Inside the filter the Size filters appear and verify that they are active.")
+    public void ınside_the_filter_the_size_filters_appear_and_verify_that_they_are_active() throws InterruptedException {
+        Thread.sleep(1000);
+        clickAndVerify(queryCardPage.Size);
+        Thread.sleep(2000);
+        clickAndVerify(queryCardPage.sizeL);
+        Thread.sleep(2000);
+        clickAndVerify(queryCardPage.xButonu);
+        Thread.sleep(2000);
+        assertTrue(queryCardPage.SizeFoundText.isDisplayed());
+        Thread.sleep(1000);
+        clickAndVerify(queryCardPage.lSizeFoundProduct);
+        Thread.sleep(1000);
+
+    }
+    @Given("Inside the filter the Color filters appear and verify that they are active.")
+    public void ınside_the_filter_the_color_filters_appear_and_verify_that_they_are_active() throws InterruptedException {
+        Thread.sleep(2000);
+        clickAndVerify(queryCardPage.color);
+        Thread.sleep(2000);
+        clickAndVerify(queryCardPage.colorBlack);
+        Thread.sleep(2000);
+        clickAndVerify(queryCardPage.xButonu);
+        Thread.sleep(2000);
+        assertTrue(queryCardPage.colorFoundText.isDisplayed());
+        Thread.sleep(1000);
+        clickAndVerify(queryCardPage.blackFoundProduct);
+        Thread.sleep(1000);
+    }
+    @Given("Inside the filter the ShortBy filters appear and verify that they are active.")
+    public void ınside_the_filter_the_short_by_filters_appear_and_verify_that_they_are_active() throws InterruptedException {
+        Thread.sleep(1000);
+        clickAndVerify(queryCardPage.sortBy);
+        Thread.sleep(2000);
+        clickAndVerify(queryCardPage.sortByLow);
+        Thread.sleep(2000);
+        assertTrue(queryCardPage.shortbyFoundText.isDisplayed());
     }
 
     //US13
@@ -186,13 +243,11 @@ public class Stepdefinition extends Base {
     public void verify_that_order_history_is_displayed_on_the_my_account_page() {
         assertTrue(queryCardPage.orderHistory.isDisplayed());
     }
-
     //US17 TC01/02
     @Given("On the Control Panel page, verify that the Change Password button appears and is clickable.")
     public void verify_that_the_change_password_button_is_visible_on_the_dashboard_page() {
         clickAndVerify(queryCardPage.changePassword);
     }
-
     @Given("Enter your current {string} in the old password box, {string} in the New password box, and {string} in the Confirm password box.")
     public void enter_your_current_in_the_old_password_box_in_the_new_password_box_and_in_the_confirm_password_box(String password, String newpassword1, String newpassword2) {
         clickAndSendKeys(queryCardPage.oldPasswordBox,password);
@@ -200,7 +255,6 @@ public class Stepdefinition extends Base {
         clickAndSendKeys(queryCardPage.confirmPasswordBox,newpassword2);
         koordinatTiklamaMethodu(227,1853);
         clickAndVerify(queryCardPage.saveChanges);
-
     }
     @Given("Verify that the password has been updated.")
     public void verify_that_the_password_has_been_updated() {
@@ -211,21 +265,6 @@ public class Stepdefinition extends Base {
         assertTrue(queryCardPage.notMatchedText.isDisplayed());
     }
     //US24
-    @Given("Click on one of the products on the home page.")
-    public void click_on_one_of_the_products_on_the_home_page() {
-        clickAndVerify(queryCardPage.seeAll);
-        koordinatTiklamaMethodu(280,542);
-        clickAndVerify(queryCardPage.productSizeHomePage);
-        clickAndVerify(queryCardPage.addToCartHomePage);
-    }
-    @Given("Click the cart icon on the Home Page.")
-    public void click_the_cart_icon_on_the_home_page() {
-        clickAndVerify(queryCardPage.cartIcon);
-    }
-    @Given("Verify that the added products are displayed.")
-    public void verify_that_the_added_products_are_displayed() {
-        clickAndVerify(queryCardPage.productVerifyPage);
-    }
     @Given("Verify that subtotal information is visible.")
     public void verify_that_subtotal_information_is_visible() {
         assertTrue(queryCardPage.subtotalVerify.isDisplayed());
@@ -239,30 +278,7 @@ public class Stepdefinition extends Base {
         clickAndVerify(queryCardPage.goToShopping);
     }
 
-    @Given("Click on the Cart icon to see the added product.")
-    public void click_on_the_cart_icon_to_see_the_added_product() {
-        clickAndVerify(queryCardPage.productSizeHomePage);
-        clickAndVerify(queryCardPage.addToCartHomePage);
-    }
-    @Given("Click the Proceed to checkout button.")
-    public void click_the_proceed_to_checkout_button() {
-        clickAndVerify(queryCardPage.proceedToCheckout);
-    }
-    @Given("Click on the address to send to in the Shipping Address.")
-    public void click_on_the_address_to_send_to_in_the_shipping_address() {
-        koordinatTiklamaMethodu(471,600);
-    }
-    @Given("Click on the Continue Payment button.")
-    public void click_on_the_continue_payment_button() {
-       clickAndVerify(queryCardPage.savePay);
-    }
-    @Given("Verify that the payment page is displayed.")
-    public void verify_that_the_payment_page_is_displayed() {
-       assertTrue(queryCardPage.paymentInformation.isDisplayed());
-    }
-
-
-//======================================================================================================================
+    //======================================================================================================================
     //Azim
     //US11-TC01
     @Given("Verify that the Juniors Category window is displayed on the homepage.")
