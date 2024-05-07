@@ -336,6 +336,9 @@ public class QueryCardPage {
    @AndroidFindBy(xpath = "//*[@content-desc='Forgot Password']")
    public WebElement forgotPasswordLabel;
 
+   @AndroidFindBy(xpath = "//*[@content-desc='Favorite']")
+   public WebElement addToWishList;
+
 
 
 
