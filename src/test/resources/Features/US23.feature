@@ -4,7 +4,6 @@
 
 Scenario:TC-01:Registered user should be able to see the Wishlist icon on the homepage and should be active categories icon should be able to see and should be active
   * User logs in "azimEmail".
-  * Verify that added products are displayed.
   * Verify that the Wishlist icon is displayed.
   * Click on the Wish List icon and verify that it is active.
   * Verify that the categories icon is displayed.

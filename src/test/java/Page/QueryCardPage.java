@@ -228,14 +228,34 @@ public class QueryCardPage {
    public WebElement saveAndPayButton;
    @AndroidFindBy(xpath ="(//*[@class='android.widget.EditText'])[1]")
    public WebElement updateFulnameBoxe;
-   @AndroidFindBy(xpath ="//android.widget.ScrollView/android.view.View/android.widget.EditText[1]")
-   public WebElement addAdresFulnameBoxe;
    @AndroidFindBy(xpath ="//android.view.View[@content-desc='Sing In To See Your Info']")
    public WebElement singInToSeeYourInfoText ;
    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='Profile']")
    public WebElement logoutprofileButton;
    @AndroidFindBy(xpath = "//android.view.View[@content-desc='(0  Products Found)']")
    public WebElement wislistProductsFoundText;
+   @AndroidFindBy(xpath = "(//android.view.View[@content-desc='Update Address'])[2]")
+   public WebElement updateadresButton;
+   @AndroidFindBy(xpath = "//*/android.view.View/android.widget.EditText[1]")
+   public WebElement addAdresFulnameBoxe;
+   @AndroidFindBy(xpath = "//*/android.view.View/android.widget.EditText[2]")
+   public WebElement addAdresemailBoxe;
+   @AndroidFindBy(xpath = "//*/android.view.View/android.widget.EditText[3]")
+   public WebElement addAdresPhoneBoxe;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc='Country']")
+   public WebElement addAdresContryBoxe;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc='State']")
+   public WebElement addAdresStateBoxe;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc='City']")
+   public WebElement addAdresCityBoxe;
+   @AndroidFindBy(xpath = "//*/android.view.View/android.widget.EditText[4]")
+   public WebElement addAdresZipKodeBoxe;
+   @AndroidFindBy(xpath = "//*/android.view.View/android.widget.EditText[5]")
+   public WebElement addAdresStreedAdresBoxe;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc='Add Address']")
+   public WebElement addAdresButton;
+   @AndroidFindBy(xpath = "(//*[@class='android.view.View'])[10]")
+   public WebElement addNewAdresVerificationText;
    //===================================================================================================================
    //hümeyra
    @AndroidFindBy(xpath ="//android.view.View[@content-desc='See All']")

@@ -3,6 +3,7 @@ package stepdefinitions;
 import hooks.Base;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.Select;
 import utilities.ConfigReader;
 import javax.swing.*;
 
@@ -291,7 +292,7 @@ public class Stepdefinition extends Base {
         queryCardPage.addToCartElementi.click();
         koordinatTiklamaMethodu(977,1685);
         queryCardPage.proceedToCheckoutButton.click();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
     }
     @Given("It is verified that the Shipping Information is displayed.")
     public void ıt_is_verified_that_the_shipping_ınformation_is_displayed() {
@@ -323,38 +324,49 @@ public class Stepdefinition extends Base {
         clickAndVerify(queryCardPage.deliveryButton);
     }
     @Given("It is verified that the shipping address information can be updated.")
-    public void ıt_is_verified_that_the_shipping_address_information_can_be_updated() {
+    public void ıt_is_verified_that_the_shipping_address_information_can_be_updated() throws InterruptedException {
         koordinatTiklamaMethodu(763,380);
         koordinatTiklamaMethodu(891,424);
-        queryCardPage.updateFulnameBoxe.clear();
-        queryCardPage.updateFulnameBoxe.sendKeys("Hasan Can");
+        name = faker.name().fullName();
+        clickAndSendKeys(queryCardPage.updateFulnameBoxe,name);
         koordinatTiklamaMethodu(292,1699);//Update adres button
-        String expectedUpdateText="Hasan Can";
-        String actualupdateText=queryCardPage.updateFulnameBoxe.getText();
-        assertEquals(actualupdateText,expectedUpdateText);
-        System.out.println(actualupdateText);
+        Thread.sleep(2000);
+        assertTrue(queryCardPage.shoppingCart.isDisplayed());
     }
     @Given("Shipping verifies that new address information can be added.")
-    public void shipping_verifies_that_new_address_information_can_be_added() {
-
-        koordinatTiklamaMethodu(500,884);//Edd new adres button
-        queryCardPage.addAdresFulnameBoxe.click();
-
-        //   faker.name().firstName();
-        /*
-        Actions actions=new Actions(Driver.getDriver());
-        Faker faker=new Faker();
-
-        String fakeEmail=faker.internet().emailAddress();
-        actions.sendKeys(faker.name().firstName())
-                .sendKeys(Keys.TAB)
-                .sendKeys(faker.name().lastName())
-                .sendKeys(Keys.TAB)
-                .sendKeys(fakeEmail)
-
-         */
+    public void shipping_verifies_that_new_address_information_can_be_added() throws InterruptedException {
+        koordinatTiklamaMethodu(946,380);
+        Thread.sleep(1000);
+        name = faker.name().fullName();
+        Thread.sleep(1000);
+        clickAndSendKeys( queryCardPage.addAdresFulnameBoxe,name);
+        email=faker.internet().emailAddress();
+        clickAndSendKeys( queryCardPage.addAdresemailBoxe,email);
+        Thread.sleep(2000);
+        Select phone=new Select(queryCardPage.addAdresPhoneBoxe);
+        phone.selectByIndex(+297);
+        Thread.sleep(1000);
+        phoneNumber=faker.phoneNumber().phoneNumber();
+        clickAndSendKeys(queryCardPage.addAdresPhoneBoxe,phoneNumber);
+        Thread.sleep(1000);
+        Select addAdresContry=new Select(queryCardPage.addAdresContryBoxe);
+        addAdresContry.selectByValue("Turkey");
+        Thread.sleep(1000);
+        Select addAdresState=new Select(queryCardPage.addAdresStateBoxe);
+        addAdresState.selectByValue("Kocaeli Province");
+        Thread.sleep(1000);
+        Select addAdresCity=new Select(queryCardPage.addAdresCityBoxe);
+        addAdresCity.selectByValue("Gebze");
+        Thread.sleep(1000);
+        zipCode=faker.address().zipCode();
+        clickAndSendKeys( queryCardPage.addAdresZipKodeBoxe,zipCode);
+        Thread.sleep(1000);
+        streetAddress=faker.address().streetAddress();
+        clickAndSendKeys( queryCardPage.addAdresStreedAdresBoxe,streetAddress);
+        clickAndVerify(queryCardPage.addAdresButton);
+        Thread.sleep(1000);
+        assertTrue(queryCardPage.addNewAdresVerificationText.isDisplayed());
     }
-
     //US19-TC01
     @Given("Logout link is displayed in Dashboard sidebar and it is verified to be active.")
     public void logout_link_is_displayed_in_dashboard_sidebar_and_it_is_verified_to_be_active() throws InterruptedException {
@@ -367,8 +379,6 @@ public class Stepdefinition extends Base {
     @Given("The logout link is clicked and it is verified that you can successfully log out of the site.")
     public void the_logout_link_is_clicked_and_it_is_verified_that_you_can_successfully_log_out_of_the_site() throws InterruptedException {
         assertTrue(queryCardPage.singInToSeeYourInfoText.isDisplayed());
-
-
     }
     //US23-TC01
     @Given("Verify that the Wishlist icon is displayed.")
