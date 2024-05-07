@@ -84,14 +84,13 @@ public class QueryCardPage {
 
    //===================================================================================================================
    //reyyan
-
    @AndroidFindBy(xpath = "//*[@content-desc='Women']")
    public WebElement womanButton;
-   @AndroidFindBy(accessibility = "Casual Women Shoes")
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Casual Women Shoes\n" + "0 (0  Reviews)\n" + "$250.00\"]")
    public WebElement womanShoes;
-   @AndroidFindBy(accessibility= "White")
+   @AndroidFindBy(xpath= "//android.view.View[@content-desc=\"White\"]")
    public WebElement colorWhite;
-   @AndroidFindBy(accessibility = "Quantity:")
+   @AndroidFindBy(xpath= "//android.view.View/android.widget.ScrollView/android.widget.ImageView[2]")
    public WebElement quantity;
    @AndroidFindBy(accessibility = "Change Password")
    public WebElement changePassword;
@@ -109,30 +108,36 @@ public class QueryCardPage {
    public WebElement passwordChangeVerify;
    @AndroidFindBy(accessibility = "Password not matched")
    public WebElement notMatchedText;
-   @AndroidFindBy(xpath = "(//android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView)[3]")
-   public WebElement cartIcon;
-   @AndroidFindBy(accessibility = "Shopping Cart")
-   public WebElement productVerifyPage;
    @AndroidFindBy(accessibility = "Subtotal")
    public WebElement subtotalVerify;
    @AndroidFindBy(accessibility = "Remove")
    public WebElement productDelete;
    @AndroidFindBy(accessibility = "Go to Shopping")
    public WebElement goToShopping;
-   @AndroidFindBy(xpath = "//android.view.View[@content-desc='The North Face Arctic Parka 0 (0  Reviews) $400.00']")
-   public WebElement productArcticParkaHomePage;
-   @AndroidFindBy(xpath = "//android.view.View[@content-desc='Floral Print Midi Dress 0 (0  Reviews) $100.00']")
-   public WebElement productmidiDressHomePage;
-   @AndroidFindBy(accessibility = "M")
-   public WebElement productSizeHomePage;
-   @AndroidFindBy(accessibility = "Add To Cart")
-   public WebElement addToCartHomePage;
-   @AndroidFindBy(accessibility = "Payment Information")
-   public WebElement paymentInformation;
-   @AndroidFindBy(accessibility = "See All")
-   public WebElement seeAll;
-
-
+   @AndroidFindBy(xpath = "(//android.view.View[2]/android.widget.ImageView)[5]")
+   public WebElement brandConverse;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"M\n" + "L\n" + "XL\n" + "S\"]/android.widget.ImageView[3]")
+   public WebElement sizeL;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"White\n" + "Black\n" + "Blue\"]/android.widget.ImageView[3]")
+   public WebElement colorBlack;
+   @AndroidFindBy(xpath = "//android.widget.RadioButton[@content-desc=\"Price High To Low\"]")
+   public WebElement sortByLow;
+   @AndroidFindBy(xpath = "(//android.view.View/android.view.View[1]/android.widget.ImageView)[1]")
+   public WebElement xButonu;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"(1 Products Found)\"]")
+   public WebElement brandFoundText;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Converse Chuck Taylor All Star Sneakers\n" + "0 (0  Reviews)\n" + "$80.00\"]")
+   public WebElement converseFoundProduct;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"(3 Products Found)\"]")
+   public WebElement SizeFoundText;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Flower Print Foil T-shirt\n" + "0 (0  Reviews)\n" + "$65.00\"]")
+   public WebElement lSizeFoundProduct;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"(3 Products Found)\"]")
+   public WebElement colorFoundText;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Dr. Martens 1460 Smooth Leather Boots\n" + "0 (0  Reviews)\n" + "$200.00\"]")
+   public WebElement blackFoundProduct;
+   @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"(12 Products Found)\"]")
+   public WebElement shortbyFoundText;
 
 
 
