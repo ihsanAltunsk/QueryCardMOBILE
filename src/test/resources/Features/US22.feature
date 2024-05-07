@@ -1,9 +1,7 @@
 #Reporter : Hümeyra Tayfun
 #US Priority : MEDIUM
   Feature: As a registered user, I would like to have a page about the orders I want to return and be able to manage my product returns.
-
     Scenario: A registered user should be able to return products
-
       * User logs in "humeyraEmail".
       * User clicks on profile button.
       * User displays order history pages and clicks on it

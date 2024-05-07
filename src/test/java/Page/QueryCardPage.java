@@ -139,8 +139,6 @@ public class QueryCardPage {
    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"(12 Products Found)\"]")
    public WebElement shortbyFoundText;
 
-
-
    //===================================================================================================================
    //senayda
    @AndroidFindBy (xpath = "(//android.view.View[1]/android.widget.ImageView[1])[1]")
@@ -167,31 +165,22 @@ public class QueryCardPage {
    public WebElement zipCodeBox;
    @AndroidFindBy (xpath = "//android.widget.ScrollView/android.view.View/android.widget.EditText[5]")
    public WebElement streetAddressBox;
-
    @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"Sign In\"]")
    public WebElement signInButton;
-
    @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"*Use Email Instead\"]")
    public WebElement useEmailInsteadButton;
-
    @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"Forgot Password\"]")
    public WebElement forgotPasswordButton;
-
    @AndroidFindBy (xpath = "//android.widget.EditText")
    public WebElement emailTextBox;
-
    @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"Get OTP\"]")
    public WebElement getOTPButton;
-
    @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"Back to sign in\"]")
    public WebElement backToSignInButton;
-
    @AndroidFindBy (xpath = "//android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[1]")
    public WebElement newPasswordTextBox;
-
    @AndroidFindBy (xpath = "//android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[2]")
    public WebElement confirmPasswordTextBox;
-
    @AndroidFindBy (xpath = "//android.view.View[@content-desc=\"Submit\"]")
    public WebElement submitButton;
 
@@ -261,6 +250,7 @@ public class QueryCardPage {
    public WebElement addAdresButton;
    @AndroidFindBy(xpath = "(//*[@class='android.view.View'])[10]")
    public WebElement addNewAdresVerificationText;
+
    //===================================================================================================================
    //hümeyra
    @AndroidFindBy(xpath ="//android.view.View[@content-desc='See All']")
@@ -297,58 +287,36 @@ public class QueryCardPage {
    public WebElement productFound;
    @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[16]")
    public WebElement Ssize;
-
    @AndroidFindBy(xpath = "//*[@content-desc='Edit Profile']")
    public WebElement editProfile;
-
    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[1]")
    public WebElement fullNameBox;
-
    @AndroidFindBy(xpath = "//*//android.widget.EditText[3]")
    public WebElement phoneBox;
-
    @AndroidFindBy(xpath = "//android.view.View[@content-desc='Humeyra Tayfn']")
    public WebElement updatedName;
-
    @AndroidFindBy(xpath = "//*[@content-desc='Return Request']")
    public WebElement returnRequestButton;
-
    @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[2]")
    public WebElement productRadioButton;
-
    @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[5]")
    public WebElement returnReasonBox;
-
    @AndroidFindBy(xpath = "//*[@content-desc='Other']")
    public WebElement other;
-
    @AndroidFindBy(xpath = "//android.widget.EditText")
    public WebElement returnNote;
-
    @AndroidFindBy(xpath = "(//*[@content-desc='Request Return'])[2]")
    public WebElement requestReturnButton;
-
    //return orders sayfasındakı urunumun locati
    @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[2]")
    public WebElement returnProcess;
-
    @AndroidFindBy(xpath = "//*[@content-desc='Sign In']")
    public WebElement signIn;
-
    @AndroidFindBy(xpath = "//*[@content-desc='Forgot Password']")
    public WebElement forgotPassword;
-
    @AndroidFindBy(xpath = "//*[@content-desc='Forgot Password']")
    public WebElement forgotPasswordLabel;
-
    @AndroidFindBy(xpath = "//*[@content-desc='Favorite']")
    public WebElement addToWishList;
-
-
-
-
-   //===================================================================================================================
-   //murat
-
 
 }

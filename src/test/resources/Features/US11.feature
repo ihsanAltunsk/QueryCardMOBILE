@@ -1,7 +1,6 @@
 #Reporter : Azim Kaya
 #US Priority : MEDIUM
   Feature: As a user, I would like to be able to see the categories and products of the Juniors menu on the home page.
-
     Scenario:Juniors category window should be displayed in the main page body. Test that products on Juniors category page can be added to cart.
       * Verify that the Juniors Category window is displayed on the homepage.
       * User clicks on 468,760.

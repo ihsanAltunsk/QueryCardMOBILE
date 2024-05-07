@@ -1,6 +1,5 @@
 #Reporter : Senayda Akkaya
 #US Priority : MEDIUM
-
   @US02
   Feature: As a user, I would like to have easy links in the bottom bar of the home page so that I can easily perform internal site operations.
     Scenario: TC01 User should be able to view and click easy links (Home) in the bottom bar of the site

@@ -4,8 +4,6 @@ import hooks.Base;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
-import utilities.ConfigReader;
-import javax.swing.*;
 
 import static org.junit.Assert.*;
 import static utilities.ReusableMethods.*;
@@ -99,7 +97,6 @@ public class Stepdefinition extends Base {
         queryCardPage.shippingButton.click();
         queryCardPage.shippingTitle.isDisplayed();
     }
-
     @Given("User navigates to Order History and views an order history detail.")
     public void user_navigates_to_order_history_and_views_an_order_history_detail() {
         clickAndVerify(queryCardPage.profileButton);
@@ -243,6 +240,7 @@ public class Stepdefinition extends Base {
     public void verify_that_order_history_is_displayed_on_the_my_account_page() {
         assertTrue(queryCardPage.orderHistory.isDisplayed());
     }
+
     //US17 TC01/02
     @Given("On the Control Panel page, verify that the Change Password button appears and is clickable.")
     public void verify_that_the_change_password_button_is_visible_on_the_dashboard_page() {
@@ -264,6 +262,7 @@ public class Stepdefinition extends Base {
     public void verify_that_password_not_matched_text_is_visible() {
         assertTrue(queryCardPage.notMatchedText.isDisplayed());
     }
+
     //US24
     @Given("Verify that subtotal information is visible.")
     public void verify_that_subtotal_information_is_visible() {
@@ -310,6 +309,7 @@ public class Stepdefinition extends Base {
     public void verify_that_products_are_filtered_by_price_from_cheap_to_expensive() {
 
     }
+
     //US16-TC01
     @Given("Click on the product selected for processing.")
     public void click_on_the_product_selected_for_processing() throws InterruptedException {
@@ -343,6 +343,7 @@ public class Stepdefinition extends Base {
     public void verify_that_the_save_and_pay_button_is_displayed_and_active() {
         clickAndVerify(queryCardPage.saveAndPayButton);
     }
+
     //US16-TC02
     @Given("Shipping address information is verified to be displayed.")
     public void shipping_address_information_is_verified_to_be_displayed() {
@@ -396,6 +397,7 @@ public class Stepdefinition extends Base {
         Thread.sleep(1000);
         assertTrue(queryCardPage.addNewAdresVerificationText.isDisplayed());
     }
+
     //US19-TC01
     @Given("Logout link is displayed in Dashboard sidebar and it is verified to be active.")
     public void logout_link_is_displayed_in_dashboard_sidebar_and_it_is_verified_to_be_active() throws InterruptedException {
@@ -409,6 +411,7 @@ public class Stepdefinition extends Base {
     public void the_logout_link_is_clicked_and_it_is_verified_that_you_can_successfully_log_out_of_the_site() throws InterruptedException {
         assertTrue(queryCardPage.singInToSeeYourInfoText.isDisplayed());
     }
+
     //US23-TC01
     @Given("Verify that the Wishlist icon is displayed.")
     public void verify_that_the_wishlist_icon_is_displayed() {
@@ -426,6 +429,7 @@ public class Stepdefinition extends Base {
     public void click_on_the_categories_icon_and_verify_that_it_is_active() {
         clickAndVerify(queryCardPage.homePageCategoryButton);
     }
+
     //US23-TC02
     @Given("Click on the main page category icon.")
     public void click_on_the_main_page_category_icon() {
@@ -457,19 +461,21 @@ public class Stepdefinition extends Base {
     public void the_product_added_to_the_wish_list_page_is_verified_as_deleted() {
     assertTrue(queryCardPage.wislistProductsFoundText.isDisplayed());
     }
+
 //======================================================================================================================
     //Senayda US01 =============================================================
     @Given("User verifies the site's logo on the Home Page.")
     public void user_verifies_the_site_s_logo_on_the_home_page() {
        assertTrue(queryCardPage.homePageLogo.isDisplayed());
     }
-// US03
+
+    // US03
     @Given("User verifies products and product features on the homepage")
     public void user_verifies_products_and_product_features_on_the_homepage() throws InterruptedException {
         assertTrue(queryCardPage.mostPopularLabel.isDisplayed());
         koordinatTiklamaMethodu(300,1300);
         Thread.sleep(3000);
-   }
+    }
     @Given("User confirms that the size-color and quantity features of the selected product are selectable")
     public void user_confirms_that_the_size_color_and_quantity_features_of_the_selected_product_are_selectable() {
     scrollDown(1500,1);
@@ -480,13 +486,13 @@ public class Stepdefinition extends Base {
     public void user_clicks_on_add_to_card_button_on_the_product_detail_page() {
         clickAndVerify(queryCardPage.addToCartButton);
     }
-
     @Given("User verifies that the price, quantity, and subtotal information of the product added to the cart is visible")
     public void user_verifies_that_the_price_quantity_and_subtotal_information_of_the_product_added_to_the_cart_is_visible() {
         assertTrue(queryCardPage.shoppingCart.isDisplayed());
         assertFalse(queryCardPage.signInButton.isDisplayed());
     }
-// US14
+
+    // US14
    @Given("User clicks and verifies Address button.")
    public void user_clicks_and_verifies_address_button() {
         clickAndVerify(queryCardPage.addressButton);
@@ -529,11 +535,12 @@ public class Stepdefinition extends Base {
     clickAndSendKeys(queryCardPage.streetAddressBox,streetAddress);
     koordinatTiklamaMethodu(340,1695);
     }
-// US20
-@Given("User clicks on SignIn button and displays the SignIn page")
-public void user_clicks_on_sign_in_button_and_displays_the_sign_in_page() {
-   clickAndVerify(queryCardPage.signInButton);
-}
+
+    // US20
+    @Given("User clicks on SignIn button and displays the SignIn page")
+    public void user_clicks_on_sign_in_button_and_displays_the_sign_in_page() {
+       clickAndVerify(queryCardPage.signInButton);
+    }
     @Given("User verifies Forgot Password button and clicks.")
     public void user_verifies_forgot_password_button_and_clicks() {
     clickAndVerify(queryCardPage.useEmailInsteadButton);
@@ -569,8 +576,8 @@ public void user_clicks_on_sign_in_button_and_displays_the_sign_in_page() {
     //Hümeyra
     @Given("Verify that most popular title is visible")
     public void verify_that_most_popular_title_is_visible() {
-    assertTrue(queryCardPage.mostPopularLabel.isDisplayed());
-}
+        assertTrue(queryCardPage.mostPopularLabel.isDisplayed());
+    }
     @Given("User displays see All icon and clicks on it")
     public void user_displays_see_all_icon_and_clicks_on_it() {
        clickAndVerify(queryCardPage.seeAllIcon);
@@ -587,12 +594,12 @@ public void user_clicks_on_sign_in_button_and_displays_the_sign_in_page() {
     }
     @Given("User displays men category window and clicks on it")
     public void user_displays_men_category_window_and_clicks_on_it() {
-     clickAndVerify(queryCardPage.manCategoryWindow);
+        clickAndVerify(queryCardPage.manCategoryWindow);
     }
     @Given("User chooses adidas3-stripes cushioned crew sock product")
     public void user_chooses_adidas3_stripes_cushioned_crew_sock_product() throws InterruptedException {
         Thread.sleep(4);
-       koordinatTiklamaMethodu(275,672);
+        koordinatTiklamaMethodu(275,672);
         Thread.sleep(3);
     }
     @Given("Verify that chosen product is visible")
@@ -651,119 +658,88 @@ public void user_clicks_on_sign_in_button_and_displays_the_sign_in_page() {
     public void user_displays_edit_profile_link_and_clicks_on_it() {
        clickAndVerify(queryCardPage.editProfile);
     }
-
     @Given("User displays full name box,clicks and sends {string}")
     public void user_displays_full_name_box_clicks_and_sends(String newFullName) {
     clickAndSendKeys(queryCardPage.fullNameBox,newFullName);
     }
-
     @Given("User displays email box,clicks and send {string}")
     public void user_displays_email_box_clicks_and_send(String newEmail) {
        clickAndSendKeys(queryCardPage.emailBox2,newEmail);
     }
-
     @Given("User displays phone box,clicks and send {string}")
     public void user_displays_phone_box_clicks_and_send(String newPhone) {
         clickAndSendKeys(queryCardPage.phoneBox,newPhone);
         scrollDown(2000,1);
     }
-
     @Given("User displays save change button and clicks on it")
     public void user_displays_save_change_button_and_clicks_on_it() {
         clickAndVerify(queryCardPage.saveChanges);
     }
-
     @Given("Verify that all changes are saved")
     public void verify_that_all_changes_are_saved() {
         assertTrue(queryCardPage.updatedName.isDisplayed());
     }
-
     @Given("User displays order history pages and clicks on it")
     public void user_displays_order_history_pages_and_clicks_on_it() {
         clickAndVerify(queryCardPage.orderHistory);
     }
-
     @Given("User clicks on action button")
     public void user_clicks_on_action_button() {
         koordinatTiklamaMethodu(936,430);
         scrollDown(500,1);
     }
-
     @Given("User displays return request button and clicks on it")
     public void user_displays_return_request_button_and_clicks_on_it() {
        clickAndVerify(queryCardPage.returnRequestButton);
     }
-
     @Given("User chooses her product")
     public void user_chooses_her_product() {
        clickAndVerify(queryCardPage.productRadioButton);
     }
-
     @Given("User clicks on return reason and chooses other")
     public void user_clicks_on_return_reason_and_chooses_other() {
         clickAndVerify(queryCardPage.returnReasonBox);
         clickAndVerify(queryCardPage.other);
     }
-
     @Given("User clicks on return note and enter {string}")
     public void user_clicks_on_return_note_and_enter_it_is_too_small(String returnNote) {
         clickAndSendKeys(queryCardPage.returnNote,returnNote);
         scrollDown(2000,1);
     }
-
     @Given("User displays request return and clicks on it")
     public void user_displays_request_return_and_clicks_on_it() {
     clickAndVerify(queryCardPage.requestReturnButton);
     }
-
     @Given("Verify that the return process has been started")
     public void verify_that_the_return_process_has_been_started() {
         assertTrue(queryCardPage.returnProcess.isDisplayed());
     }
-
     @Given("User clicks on signIn button")
     public void user_clicks_on_sign_ın_button() {
     clickAndVerify(queryCardPage.signIn);
     }
-
     @Given("User chooses -*Use email instead- and clicks on email box then enters a valid email {string}")
     public void user_chooses_use_email_instead_and_clicks_on_email_box_then_enters_a_valid_email(String humeyraEmail) {
         clickAndVerify(queryCardPage.useEmail);
         clickAndVerify(queryCardPage.emailBox);
         clickAndSendKeys(queryCardPage.emailBox,humeyraEmail);
     }
-
     @Given("User displays password box,clicks on it and enter a valid {string}")
     public void user_displays_password_box_clicks_on_it_and_enter_a_valid(String password) {
         clickAndVerify(queryCardPage.passwordBox);
         queryCardPage.passwordBox.sendKeys(password);
     }
-
     @Given("User clicks on sign in button")
     public void user_clicks_on_sign_in_button() {
         clickAndVerify(queryCardPage.signIn);
     }
-
     @Given("User displays forgot password link and clicks on it")
     public void user_displays_forgot_password_link_and_clicks_on_it() {
        clickAndVerify(queryCardPage.forgotPassword);
     }
-
     @Given("Verify that user can access the forgot password page from the login page")
     public void verify_that_user_can_access_the_forgot_password_page_from_the_login_page() {
         assertTrue(queryCardPage.forgotPasswordLabel.isDisplayed());
     }
-
-
-
-
-
-
-
-
-//======================================================================================================================
-    //Murat
-
-
 
 }

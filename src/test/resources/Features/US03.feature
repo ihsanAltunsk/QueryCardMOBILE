@@ -1,7 +1,7 @@
 #Reporter : Senayda Akkaya
 #US Priority : HIGH
   Feature: As a user, I want to be able to shop without registering on the site
-@US03
+    @US03
     Scenario: TC01 User adds the selected product to the Add to Cart and performs transactions related to the product added to the cart
       * User verifies products and product features on the homepage
       * User confirms that the size-color and quantity features of the selected product are selectable

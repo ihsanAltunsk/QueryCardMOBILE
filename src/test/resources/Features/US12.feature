@@ -2,7 +2,6 @@
 #US Priority : MEDIUM
 @wip
   Feature: As a user, I would like to be able to see the categories and products of the Women menu on the home page.
-
     Scenario:Access to women category
       * Verify that the Women's Category window is displayed and clicked on the home page.
       * Click on a product on the Products page and verify that it is displayed
