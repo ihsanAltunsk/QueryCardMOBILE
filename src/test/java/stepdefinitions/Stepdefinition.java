@@ -741,5 +741,36 @@ public class Stepdefinition extends Base {
     public void verify_that_user_can_access_the_forgot_password_page_from_the_login_page() {
         assertTrue(queryCardPage.forgotPasswordLabel.isDisplayed());
     }
+    @Given("User clicks on Add to Wishlist button")
+    public void user_clicks_on_add_to_wishlist_button() {
+        clickAndVerify(queryCardPage.addToWishList);
+    }
+
+    @Given("Verfy that user added product to add to Wishlist")
+    public void verfy_that_user_added_product_to_add_to_wishlist() {
+        assertTrue(queryCardPage.signText.isDisplayed());
+    }
+
+    @Given("User clicks on category button")
+    public void user_clicks_on_category_button() {
+        clickAndVerify(queryCardPage.homePageCategoryButton);
+    }
+
+    @Given("User displays men title and clicks on it")
+    public void user_displays_men_title_and_clicks_on_it() {
+        clickAndVerify(queryCardPage.menButton);
+    }
+
+    @Given("User displays women title and clicks on it")
+    public void user_displays_women_title_and_clicks_on_it() {
+        clickAndVerify(queryCardPage.womanButton);
+    }
+    @Given("User displays jumıor title and clicks on it")
+    public void user_displays_jumıor_title_and_clicks_on_it() {
+        clickAndVerify(queryCardPage.viewJuniors);
+    }
+
+
+
 
 }
