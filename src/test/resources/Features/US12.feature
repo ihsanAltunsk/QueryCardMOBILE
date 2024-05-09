@@ -5,7 +5,7 @@
     Scenario:Access to women category
       * Verify that the Women's Category window is displayed and clicked on the home page.
       * Click on a product on the Products page and verify that it is displayed
-      * Verify that the filtering icon "Color" and "Quantity" is visible and active.
+      * Verify that the filtering icon Color and Quantity is visible and active.
       * Verify that a product's add to cart button is active on the products page.
 
     Scenario:Viewing and activating brand filters

@@ -12,53 +12,77 @@ public class QueryCardPage {
        PageFactory.initElements(new AppiumFieldDecorator(getAppiumDriver()),this);
     }
 
-   //ihsan
+   //ihsan1
+   //Homepage
    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='Profile']")
    public WebElement profileButton;
+   //Homepage --> Profile --> Signup
    @AndroidFindBy(xpath = "//android.widget.EditText[1]")
    public WebElement emailBox;
+   //Homepage --> Profile --> Signup
    @AndroidFindBy(xpath = "//android.widget.EditText[2]")
    public WebElement passwordBox;
+   //Homepage --> Profile --> SignIn
    @AndroidFindBy(xpath = "(//*[@content-desc='Sign In'])[1]")
    public WebElement signText;
+   //Homepage --> Profile --> SignIn
    @AndroidFindBy(xpath = "//*[@content-desc='*Use Email Instead']")
    public WebElement useEmail;
+   //Homepage --> Profile --> Signup
    @AndroidFindBy(xpath = "//*[@content-desc='Sign Up']")
    public WebElement signUpButton;
+   //Homepage --> Profile --> Signup
    @AndroidFindBy(xpath = "//*//android.widget.EditText[1]")
    public WebElement nameBox;
+   //Homepage --> Profile --> Signup
    @AndroidFindBy(xpath = "//*//android.widget.EditText[2]")
    public WebElement emailBox2;
+   //Homepage --> Profile --> Signup
    @AndroidFindBy(xpath = "//*//android.widget.EditText[3]")
    public WebElement passwordBox2;
+   //Homepage --> Profile --> Signup
    @AndroidFindBy(xpath = "(//*[@content-desc='Sign Up'])[1]")
    public WebElement signUp1;
+   //Homepage --> Profile --> Signup
    @AndroidFindBy(xpath = "(//*[@content-desc='Sign Up'])[2]")
    public WebElement signUp2;
+   //Homepage --> Profile --> Signup
    @AndroidFindBy(xpath = "//*[@content-desc='This field is required']")
    public WebElement blankAlert;
+   //Homepage --> Product
    @AndroidFindBy(xpath = "(//*[@index='1'])[3]")
    public WebElement productHeader;
+   //Homepage --> Product
    @AndroidFindBy(xpath = "//*[@content-desc='Product Details']")
    public WebElement productDetails;
+   //Homepage --> Product
    @AndroidFindBy(xpath = "//*[@index='10']")
    public WebElement productDetailsContext;
+   //Homepage --> Product
    @AndroidFindBy(xpath = "//*[@content-desc='Videos']")
    public WebElement videosButton;
+   //Homepage --> Product
    @AndroidFindBy(xpath = "//*[@content-desc='Product Videos']")
    public WebElement videosTitle;
+   //Homepage --> Product
    @AndroidFindBy(xpath = "//*[@content-desc='Review']")
    public WebElement reviewButton;
+   //Homepage --> Product
    @AndroidFindBy(xpath = "//*[@content-desc='Product Reviews']")
    public WebElement reviewTitle;
+   //Homepage --> Product
    @AndroidFindBy(xpath = "//*[@content-desc='Shipping & Return']")
    public WebElement shippingButton;
+   //Homepage --> Product
    @AndroidFindBy(xpath = "(//*[@content-desc='Shipping & Return'])[2]")
    public WebElement shippingTitle;
+   //Homepage --> Profile
    @AndroidFindBy(xpath = "//*[@content-desc='Order History']")
    public WebElement orderHistory;
+   //Homepage --> Profile --> Order History
    @AndroidFindBy(xpath = " //*[@content-desc='Your Order status is as follows']")
    public WebElement orderHistoryPage;
+   //Homepage --> Profile --> Order History
    @AndroidFindBy(xpath = "//*[@content-desc='Download Receipt']")
    public WebElement downloadReceipt;
    @AndroidFindBy(xpath = "//(//*[@content-desc='QueryCart - Shop Smarter, Live Better'])[1]")
@@ -81,6 +105,17 @@ public class QueryCardPage {
    public WebElement stripe;
    @AndroidFindBy(xpath = "//*[@content-desc='Confirm Order']")
    public WebElement confirmOrderButton;
+   @AndroidFindBy(xpath = "(//android.widget.ImageView[2])[1]")
+   public WebElement search;
+   @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[4]")
+   public WebElement fav;
+   @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[11]")
+   public WebElement fav2;
+   @AndroidFindBy(xpath = "//*[@text='Confirm']")
+   public WebElement confirm;
+   @AndroidFindBy(xpath = "//*[@content-desc='Go to order details']")
+   public WebElement goToOrder;
+
 
    //===================================================================================================================
    //reyyan
