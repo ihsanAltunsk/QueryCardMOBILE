@@ -7,8 +7,6 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty",
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
-                "html:target/default-cucumber-reports.html",
-                "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml",
                 "rerun:target/failedRerun.txt"},
         features = "src/test/resources/features",
