@@ -157,14 +157,18 @@ public class ReusableMethods extends Base {
     }
 
     public static void signIn(String email, String password) throws InterruptedException {
+        Thread.sleep(2000);
         koordinatTiklamaMethodu(970,1700);
+        Thread.sleep(1000);
         koordinatTiklamaMethodu(800,600);
         Thread.sleep(5000);
         koordinatTiklamaMethodu(896,547);
         koordinatTiklamaMethodu(500,630);
         queryCardPage.emailBox.sendKeys(email);
+        Thread.sleep(2000);
         koordinatTiklamaMethodu(500,870);
         queryCardPage.passwordBox.sendKeys(password);
+        Thread.sleep(1000);
         koordinatTiklamaMethodu(540,1024);
     }
 }

@@ -17,9 +17,10 @@ public class CommonStepdefinitions extends Base {
         clickAndVerify(queryCardPage.profileButton);
     }
     @Given("User navigates to back for {int} time.")
-    public void user_navigates_to_back_time(int count) {
+    public void user_navigates_to_back_time(int count) throws InterruptedException {
         for (int i = 0; i < count; i++) {
             Driver.getAppiumDriver().navigate().back();
+            Thread.sleep(500);
         }
     }
     @Given("User clicks on {int},{int}.")

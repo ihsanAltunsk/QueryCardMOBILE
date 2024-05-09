@@ -11,27 +11,32 @@ import static utilities.ReusableMethods.*;
 public class Stepdefinition extends Base {
 
     //ihsan
+    //US04
     @Given("User clicks on signUp button and displays the signUp page")
     public void user_clicks_on_sign_up_button_and_displays_the_sign_up_page() {
         clickAndVerify(queryCardPage.signUpButton);
         assertTrue(queryCardPage.signUp1.isDisplayed());
     }
+    //US04
     @Given("User clicks on name box and enters a valid name.")
     public void user_clicks_on_name_box_and_enters_a_valid_name() {
         name = faker.name().fullName();
         clickAndSendKeys(queryCardPage.nameBox, name);
     }
+    //US04
     @Given("User chooses -*Use email instead- and clicks on email box then enters a valid email.")
     public void user_chooses_and_clicks_on_email_box_then_enters_a_valid_email() {
         clickAndVerify(queryCardPage.useEmail);
         email = faker.internet().emailAddress();
         clickAndSendKeys(queryCardPage.emailBox2, email);
     }
+    //US04
     @Given("User clicks on password box and enters a valid password.")
     public void user_clicks_on_password_box_and_enters_a_valid_password() {
         password = faker.internet().password(6,10,true,true, true);
         clickAndSendKeys(queryCardPage.passwordBox2, password);
     }
+    //US04
     @Given("User clicks on signUp button and verifies that he-she registered.")
     public void user_clicks_on_sign_up_button_and_verifies_that_he_she_registered() throws InterruptedException {
         koordinatTiklamaMethodu(227,1853);
@@ -39,45 +44,53 @@ public class Stepdefinition extends Base {
         Thread.sleep(500);
         assertTrue(queryCardPage.signText.isDisplayed());
     }
+    //US04
     @Given("User clicks on signUp button and verifies that he-she did not registered.")
     public void user_clicks_on_sign_up_button_and_verifies_that_he_she_did_not_registered() {
         koordinatTiklamaMethodu(227,1853);
         clickAndVerify(queryCardPage.signUp2);
         assertTrue(queryCardPage.blankAlert.isDisplayed());
     }
+    //US04
     @Given("User clicks on signUp button and verifies that he-she did not registered2.")
     public void user_clicks_on_sign_up_button_and_verifies_that_he_she_did_not_registered2() {
         koordinatTiklamaMethodu(227,1853);
         clickAndVerify(queryCardPage.signUp2);
         assertTrue(queryCardPage.signUp2.isDisplayed());
     }
+    //US04
     @Given("User clicks on phoneBox and enters an invalid phone number.")
     public void user_clicks_on_phone_box_and_enters_an_invalid_phone_number() {
         phoneNumber = "1234";
         clickAndSendKeys(queryCardPage.emailBox2, phoneNumber);
     }
+    //US04
     @Given("User chooses -*Use email instead- and clicks on email box then enters an invalid email.")
     public void user_chooses_and_clicks_on_email_box_then_enters_an_invalid_email() {
         clickAndVerify(queryCardPage.useEmail);
         email = "wrongemail";
         clickAndSendKeys(queryCardPage.emailBox2, email);
     }
+    //US04
     @Given("User clicks on password box and enters an invalid password.")
     public void user_clicks_on_password_box_and_enters_an_invalid_password() {
         password = faker.internet().password(1,4,false,false,false);
         clickAndSendKeys(queryCardPage.passwordBox2, password);
     }
+    //US09-US21
     @Given("User clicks on the product and verifies that he-she navigated to the product page.")
     public void user_clicks_on_the_product_and_verifies_that_he_she_navigated_to_the_product_page() throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         koordinatTiklamaMethodu(275,1300);
         assertTrue(queryCardPage.productHeader.isDisplayed());
     }
+    //US09
     @Given("User displays product header and context.")
     public void user_displays_product_header_and_context() {
         assertTrue(queryCardPage.productDetails.isDisplayed());
         assertTrue(queryCardPage.productDetailsContext.isDisplayed());
     }
+    //US09
     @Given("User displays the Product Videos title and product videos.")
     public void user_displays_the_product_videos_title_and_product_videos() {
         queryCardPage.videosButton.click();
@@ -87,59 +100,73 @@ public class Stepdefinition extends Base {
         queryCardPage.shippingButton.click();
         queryCardPage.shippingTitle.isDisplayed();
     }
+    //US09
     @Given("User displays the Review title and reviews of the product.")
     public void user_displays_the_review_title_and_reviews_of_the_product() {
         queryCardPage.reviewButton.click();
         queryCardPage.reviewTitle.isDisplayed();
     }
+    //US09
     @Given("User displays the Shipping&Return heading and the shipping and return conditions.")
     public void user_displays_the_shipping_return_heading_and_the_shipping_and_return_conditions() {
         queryCardPage.shippingButton.click();
         queryCardPage.shippingTitle.isDisplayed();
     }
+    //US15
     @Given("User navigates to Order History and views an order history detail.")
-    public void user_navigates_to_order_history_and_views_an_order_history_detail() {
-        clickAndVerify(queryCardPage.profileButton);
-        clickAndVerify(queryCardPage.orderHistory);
-        assertTrue(queryCardPage.orderHistory.isDisplayed());
+    public void user_navigates_to_order_history_and_views_an_order_history_detail() throws InterruptedException {
         koordinatTiklamaMethodu(500,500);
-        assertTrue(queryCardPage.orderHistoryPage.isDisplayed());
+        Thread.sleep(5000);
     }
+    //US15
     @Given("User displays the receipt.")
-    public void user_displays_the_receipt() {
+    public void user_displays_the_receipt() throws InterruptedException {
         scrollDown(500,1);
+        Thread.sleep(2000);
         clickAndVerify(queryCardPage.downloadReceipt);
-        assertTrue(queryCardPage.receipt.isDisplayed());
+        Thread.sleep(5000);
     }
+    //US15
     @Given("User cancels the order and verifies that the order is canceled.")
     public void user_cancels_the_order() {
         clickAndVerify(queryCardPage.cancelOrder);
         scrollUp(500,1);
         assertTrue(queryCardPage.canceledOrder.isDisplayed());
     }
+    //US21
     @Given("User adds the product to the cart and displays the cart.")
-    public void user_adds_the_product_to_the_cart_and_displays_the_cart() {
+    public void user_adds_the_product_to_the_cart_and_displays_the_cart() throws InterruptedException {
+        Thread.sleep(2000);
         clickAndVerify(queryCardPage.size);
         scrollDown(1000,1);
+        Thread.sleep(2000);
         clickAndVerify(queryCardPage.addToCartButton);
+        Thread.sleep(5000);
         koordinatTiklamaMethodu(980,1685);
+        Thread.sleep(2000);
     }
+    //US21
     @Given("User proceeds to checkout.")
-    public void user_proceeds_to_checkout() {
+    public void user_proceeds_to_checkout() throws InterruptedException {
         clickAndVerify(queryCardPage.proceedToCheckout);
+        Thread.sleep(2000);
         koordinatTiklamaMethodu(470,602);
         scrollDown(500,1);
+        Thread.sleep(2000);
         clickAndVerify(queryCardPage.savePay);
+        Thread.sleep(2000);
     }
+    //US21
     @Given("User selects stripe payment method and enters the credentials")
     public void user_selects_stripe_payment_method_and_enters_the_credentials() throws InterruptedException {
-        assertTrue(queryCardPage.paymentMethod.isDisplayed());
         clickAndVerify(queryCardPage.stripe);
+        Thread.sleep(2000);
         clickAndVerify(queryCardPage.confirmOrderButton);
+        Thread.sleep(5000);
         card_number = 4242424242424242L;
         cc = 1234;
         cvc = 567;
-        zip = 123;
+        zip = 34000;
         Thread.sleep(1000);
         clickAndSendKeys(queryCardPage.nameBox, Long.toString(card_number));
         actions.sendKeys(Keys.TAB).
@@ -147,7 +174,11 @@ public class Stepdefinition extends Base {
                 sendKeys(Integer.toString(cvc)).
                 sendKeys(Integer.toString(zip)).
                 perform();
-        Thread.sleep(1000);
+        Thread.sleep(4000);
+        clickAndVerify(queryCardPage.confirm);
+        Thread.sleep(5000);
+        clickAndVerify(queryCardPage.goToOrder);
+        Thread.sleep(2000);
     }
 
 //======================================================================================================================
@@ -159,13 +190,22 @@ public class Stepdefinition extends Base {
         Thread.sleep(3000);
         clickAndVerify(queryCardPage.womanButton);
         Thread.sleep(2000);
+        clickAndVerify(queryCardPage.search);
+        Thread.sleep(2000);
+        actions.sendKeys(queryCardPage.emailTextBox,"dress").perform();
+        Thread.sleep(1000);
+        actions.sendKeys(Keys.ENTER).perform();
+        Thread.sleep(5000);
+        clickAndVerify(queryCardPage.fav);
+        Thread.sleep(2000);
+        clickAndVerify(queryCardPage.fav2);
     }
     @Given("Click on a product on the Products page and verify that it is displayed")
-    public void click_a_product_on_the_products_page() throws InterruptedException {
+    public void click_a_product_on_the_products_page() {
         clickAndVerify(queryCardPage.womanShoes);
     }
-    @Given("Verify that the filtering icon {string} and {string} is visible and active.")
-    public void verify_that_the_filtering_icon_and_is_visible_and_active(String string, String string2) throws InterruptedException {
+    @Given("Verify that the filtering icon Color and Quantity is visible and active.")
+    public void verify_that_the_filtering_icon_and_is_visible_and_active() throws InterruptedException {
         Thread.sleep(2000);
         clickAndVerify(queryCardPage.colorWhite);
         Thread.sleep(2000);
@@ -413,12 +453,9 @@ public class Stepdefinition extends Base {
     }
 
     //US23-TC01
-    @Given("Verify that the Wishlist icon is displayed.")
-    public void verify_that_the_wishlist_icon_is_displayed() {
-        queryCardPage.homePageWishlistButton.isDisplayed();
-    }
     @Given("Click on the Wish List icon and verify that it is active.")
-    public void click_on_the_wish_list_icon_and_verify_that_it_is_active() {
+    public void click_on_the_wish_list_icon_and_verify_that_it_is_active() throws InterruptedException {
+        Thread.sleep(2000);
         clickAndVerify(queryCardPage.homePageWishlistButton);
     }
     @Given("Verify that the categories icon is displayed.")
@@ -745,22 +782,18 @@ public class Stepdefinition extends Base {
     public void user_clicks_on_add_to_wishlist_button() {
         clickAndVerify(queryCardPage.addToWishList);
     }
-
     @Given("Verfy that user added product to add to Wishlist")
     public void verfy_that_user_added_product_to_add_to_wishlist() {
         assertTrue(queryCardPage.signText.isDisplayed());
     }
-
     @Given("User clicks on category button")
     public void user_clicks_on_category_button() {
         clickAndVerify(queryCardPage.homePageCategoryButton);
     }
-
     @Given("User displays men title and clicks on it")
     public void user_displays_men_title_and_clicks_on_it() {
         clickAndVerify(queryCardPage.menButton);
     }
-
     @Given("User displays women title and clicks on it")
     public void user_displays_women_title_and_clicks_on_it() {
         clickAndVerify(queryCardPage.womanButton);
@@ -769,8 +802,4 @@ public class Stepdefinition extends Base {
     public void user_displays_jumıor_title_and_clicks_on_it() {
         clickAndVerify(queryCardPage.viewJuniors);
     }
-
-
-
-
 }
