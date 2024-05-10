@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 
 public class OuterRunner {
 
-    final String tags = "@EndToEnd";
+    final String tags = "@US14-TC01";
 
     @CucumberOptions(
             plugin = {
