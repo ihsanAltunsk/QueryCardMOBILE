@@ -13,6 +13,7 @@ public class OuterRunner {
     @CucumberOptions(
             plugin = {
                     "pretty",
+                    "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
                     "html:target/reports/" + tags + "-report.html",
                     "json:target/json-reports/"+ tags + "cucumber.json",
                     "junit:target/xml-report/" + tags + "cucumber.xml",
