@@ -170,7 +170,7 @@ public class Stepdefinition extends Base {
         Thread.sleep(1000);
         clickAndSendKeys(queryCardPage.nameBox, Long.toString(card_number));
         Thread.sleep(1000);
-        actions.sendKeys(Keys.TAB).
+        actions.
                 sendKeys(Integer.toString(cc)).
                 sendKeys(Integer.toString(cvc)).
                 sendKeys(Integer.toString(zip)).
