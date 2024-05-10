@@ -18,7 +18,6 @@ public abstract class Base {
     public static Faker faker;
     public static UiAutomator2Options options;
     public static AppiumDriver driver;
-    public static DesiredCapabilities desiredCapabilities;
     public static QueryCardPage queryCardPage;
     public static Actions actions;
 
@@ -27,7 +26,6 @@ public abstract class Base {
         random = new Random();
         options = new UiAutomator2Options();
         queryCardPage = new QueryCardPage();
-        desiredCapabilities = new DesiredCapabilities();
         actions = new Actions(driver);
     }
 }

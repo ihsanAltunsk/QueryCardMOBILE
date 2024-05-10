@@ -1,4 +1,4 @@
-@end
+@EndToEnd
 Feature:
   Scenario:
     * User logs in "ihsanEmail".
