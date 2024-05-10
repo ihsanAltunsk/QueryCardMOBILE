@@ -12,7 +12,7 @@ public class QueryCardPage {
        PageFactory.initElements(new AppiumFieldDecorator(getAppiumDriver()),this);
     }
 
-   //ihsan1
+   //ihsan
    //Homepage
    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='Profile']")
    public WebElement profileButton;
