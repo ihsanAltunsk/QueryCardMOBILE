@@ -23,19 +23,34 @@ import java.util.Date;
 
 public class ReusableMethods extends Base {
 
-    public static void koordinatTiklama(WebElement slider) throws InterruptedException {
-        Point source = slider.getLocation();
-        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
-        Sequence sequence = new Sequence(finger, 1);
-        sequence.addAction(finger.createPointerMove(ofMillis(0),
-                PointerInput.Origin.viewport(), source.x, source.y));
-        sequence.addAction(finger.createPointerDown(PointerInput.MouseButton.MIDDLE.asArg()));
-        sequence.addAction(new Pause(finger, ofMillis(600)));
-        sequence.addAction(finger.createPointerMove(ofMillis(600),
-                PointerInput.Origin.viewport(), source.x + 400, source.y));
-        sequence.addAction(finger.createPointerUp(PointerInput.MouseButton.MIDDLE.asArg()));
+    public static void clickAndVerify(WebElement element) {
+        assertTrue(element.isDisplayed());
+        assertTrue(element.isEnabled());
+        element.click();
+    }
 
-        getAppiumDriver().perform(singletonList(sequence));
+    public static void clickAndSendKeys(WebElement element, String context) {
+        assertTrue(element.isDisplayed());
+        assertTrue(element.isEnabled());
+        element.click();
+        element.clear();
+        element.sendKeys(context);
+    }
+
+    public static void signIn(String email, String password) throws InterruptedException {
+        Thread.sleep(2000);
+        koordinatTiklamaMethodu(970,1700);
+        Thread.sleep(1000);
+        koordinatTiklamaMethodu(800,600);
+        Thread.sleep(5000);
+        koordinatTiklamaMethodu(896,547);
+        koordinatTiklamaMethodu(500,630);
+        queryCardPage.emailBox.sendKeys(email);
+        Thread.sleep(2000);
+        koordinatTiklamaMethodu(500,870);
+        queryCardPage.passwordBox.sendKeys(password);
+        Thread.sleep(1000);
+        koordinatTiklamaMethodu(540,1024);
     }
 
     public static void koordinatTiklamaMethodu(int x,int y) {
@@ -49,34 +64,6 @@ public class ReusableMethods extends Base {
         tap.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         driver.perform(Arrays.asList(tap));
     }
-
-    public static void scrollWithUiScrollableAndClick(String elementText) {
-        AndroidDriver driver = (AndroidDriver)  Driver.getAppiumDriver();
-    //  driver.findElement(AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))");
-        driver.findElement(By.xpath("//*[@text='" + elementText + "']")).click();
-    }
-
-    public static void scrollWithUiScrollable(String elementText) {
-        AndroidDriver driver = (AndroidDriver)  getAppiumDriver();
-    //  driver.findElement(AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))"));
-
-    }
-
-    public static String getScreenshot(String name) throws IOException {
-        // naming the screenshot with the current date to avoid duplication
-        String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-        // TakesScreenshot is an interface of selenium that takes the screenshot
-        TakesScreenshot ts = (TakesScreenshot)Driver.getAppiumDriver();
-
-        File source = ts.getScreenshotAs(OutputType.FILE);
-        // full path to the screenshot location
-        String target = System.getProperty("user.dir") + "/target/Screenshots/" + name + date + ".png";
-        File finalDestination = new File(target);
-        // save the screenshot to the path given
-        FileUtils.copyFile(source, finalDestination);
-        return target;
-    }
-
     public static void ekranKaydirmaMethodu(int xPress,int yPress,int wait,int xMove,int yMove, int count){
         final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
         for (int i = 1; i <= count; i++) {
@@ -125,33 +112,44 @@ public class ReusableMethods extends Base {
         }
     }
 
-    public static void clickAndVerify(WebElement element) {
-        assertTrue(element.isDisplayed());
-        assertTrue(element.isEnabled());
-        element.click();
+    public static void scrollWithUiScrollableAndClick(String elementText) {
+        AndroidDriver driver = (AndroidDriver)  Driver.getAppiumDriver();
+    //  driver.findElement(AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))");
+        driver.findElement(By.xpath("//*[@text='" + elementText + "']")).click();
     }
 
-    public static void clickAndSendKeys(WebElement element, String context) {
-        assertTrue(element.isDisplayed());
-        assertTrue(element.isEnabled());
-        element.click();
-        element.clear();
-        element.sendKeys(context);
+    public static void scrollWithUiScrollable(String elementText) {
+        AndroidDriver driver = (AndroidDriver)  getAppiumDriver();
+    //  driver.findElement(AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))"));
+
     }
 
-    public static void signIn(String email, String password) throws InterruptedException {
-        Thread.sleep(2000);
-        koordinatTiklamaMethodu(970,1700);
-        Thread.sleep(1000);
-        koordinatTiklamaMethodu(800,600);
-        Thread.sleep(5000);
-        koordinatTiklamaMethodu(896,547);
-        koordinatTiklamaMethodu(500,630);
-        queryCardPage.emailBox.sendKeys(email);
-        Thread.sleep(2000);
-        koordinatTiklamaMethodu(500,870);
-        queryCardPage.passwordBox.sendKeys(password);
-        Thread.sleep(1000);
-        koordinatTiklamaMethodu(540,1024);
+    public static String getScreenshot(String name) throws IOException {
+        // naming the screenshot with the current date to avoid duplication
+        String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        // TakesScreenshot is an interface of selenium that takes the screenshot
+        TakesScreenshot ts = (TakesScreenshot)Driver.getAppiumDriver();
+
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        // full path to the screenshot location
+        String target = System.getProperty("user.dir") + "/target/Screenshots/" + name + date + ".png";
+        File finalDestination = new File(target);
+        // save the screenshot to the path given
+        FileUtils.copyFile(source, finalDestination);
+        return target;
+    }
+    public static void koordinatTiklama(WebElement slider) throws InterruptedException {
+        Point source = slider.getLocation();
+        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        Sequence sequence = new Sequence(finger, 1);
+        sequence.addAction(finger.createPointerMove(ofMillis(0),
+                PointerInput.Origin.viewport(), source.x, source.y));
+        sequence.addAction(finger.createPointerDown(PointerInput.MouseButton.MIDDLE.asArg()));
+        sequence.addAction(new Pause(finger, ofMillis(600)));
+        sequence.addAction(finger.createPointerMove(ofMillis(600),
+                PointerInput.Origin.viewport(), source.x + 400, source.y));
+        sequence.addAction(finger.createPointerUp(PointerInput.MouseButton.MIDDLE.asArg()));
+
+        getAppiumDriver().perform(singletonList(sequence));
     }
 }
