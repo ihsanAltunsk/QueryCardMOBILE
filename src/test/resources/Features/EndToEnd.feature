@@ -1,6 +1,6 @@
 @EndToEnd
-Feature:
-  Scenario:
+Feature: User buys a product.
+  Scenario: User should buy a product.
     * User logs in "ihsanEmail".
     * Verify that the Women's Category window is displayed and clicked on the home page.
     * User navigates to back for 3 time.

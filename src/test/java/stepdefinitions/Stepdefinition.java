@@ -169,6 +169,7 @@ public class Stepdefinition extends Base {
         zip = 34000;
         Thread.sleep(1000);
         clickAndSendKeys(queryCardPage.nameBox, Long.toString(card_number));
+        Thread.sleep(1000);
         actions.sendKeys(Keys.TAB).
                 sendKeys(Integer.toString(cc)).
                 sendKeys(Integer.toString(cvc)).
@@ -195,7 +196,7 @@ public class Stepdefinition extends Base {
         actions.sendKeys(queryCardPage.emailTextBox,"dress").perform();
         Thread.sleep(1000);
         actions.sendKeys(Keys.ENTER).perform();
-        Thread.sleep(5000);
+        Thread.sleep(8000);
         clickAndVerify(queryCardPage.fav);
         Thread.sleep(2000);
         clickAndVerify(queryCardPage.fav2);
@@ -457,6 +458,7 @@ public class Stepdefinition extends Base {
     public void click_on_the_wish_list_icon_and_verify_that_it_is_active() throws InterruptedException {
         Thread.sleep(2000);
         clickAndVerify(queryCardPage.homePageWishlistButton);
+        Thread.sleep(8000);
     }
     @Given("Verify that the categories icon is displayed.")
     public void verify_that_the_categories_icon_is_displayed() {
