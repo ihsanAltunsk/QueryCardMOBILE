@@ -177,9 +177,9 @@ public class Stepdefinition extends Base {
                 perform();
         Thread.sleep(4000);
         clickAndVerify(queryCardPage.confirm);
-        Thread.sleep(5000);
+        Thread.sleep(8000);
         clickAndVerify(queryCardPage.goToOrder);
-        Thread.sleep(2000);
+        Thread.sleep(4000);
     }
 
 //======================================================================================================================
