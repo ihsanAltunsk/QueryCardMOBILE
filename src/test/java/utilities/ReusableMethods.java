@@ -1,8 +1,6 @@
 package utilities;
 
 import hooks.Base;
-import io.appium.java_client.remote.AndroidMobileCapabilityType;
-import io.appium.java_client.remote.MobileCapabilityType;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Pause;
@@ -24,14 +22,6 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class ReusableMethods extends Base {
-    public static void uploadApk(){
-        desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME,ConfigReader.getProperty("deviceName"));
-        desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
-        desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,ConfigReader.getProperty("version"));
-        desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
-        desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,ConfigReader.getProperty("appPackage"));
-        desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,ConfigReader.getProperty("appActivity"));
-    }
 
     public static void koordinatTiklama(WebElement slider) throws InterruptedException {
         Point source = slider.getLocation();
@@ -132,13 +122,6 @@ public class ReusableMethods extends Base {
                     PointerInput.Origin.viewport(), end.getX(), end.getY()));
             swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
             driver.perform(Arrays.asList(swipe));
-        }
-    }
-    public static void wait(int saniye) {
-        try {
-            Thread.sleep(saniye * 1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 

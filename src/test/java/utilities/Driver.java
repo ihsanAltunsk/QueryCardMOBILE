@@ -44,7 +44,20 @@ public class Driver extends Base {
 
                     break;
                 case "IOS":
-
+                    options.setPlatformName("Ios").setAutomationName("XCUITest");
+                    options.setApp("src/test/java/Apps/querycart1.0.app");
+                    options.setAppPackage("com.inilabs.shopking");
+                    options.setAppActivity("com.inilabs.shopking.MainActivity");
+                    options.setUdid("emulator-5554");
+                    options.setNoReset(false);
+                    options.setNewCommandTimeout(Duration.ofMinutes(20));
+                    try {
+                        driver = new AndroidDriver(
+                                new URL("http://0.0.0.0:4723"), options
+                        );
+                    } catch (MalformedURLException e) {
+                        throw new RuntimeException(e);
+                    }
                     break;
                 default:
                     throw new RuntimeException("Desteklenmeyen Platform");
