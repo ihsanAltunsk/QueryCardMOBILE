@@ -37,6 +37,18 @@ public class ReusableMethods extends Base {
         element.sendKeys(context);
     }
 
+    public static void koordinatTiklamaMethodu(int x,int y) {
+        final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        var tapPoint = new Point(x, y);
+        var tap = new Sequence(finger, 1);
+        tap.addAction(finger.createPointerMove(Duration.ofMillis(0),
+                PointerInput.Origin.viewport(), tapPoint.x, tapPoint.y));
+        tap.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+        tap.addAction(new Pause(finger, Duration.ofMillis(50)));
+        tap.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+        driver.perform(Arrays.asList(tap));
+    }
+
     public static void signIn(String email, String password) throws InterruptedException {
         Thread.sleep(2000);
         koordinatTiklamaMethodu(970,1700);
@@ -53,17 +65,6 @@ public class ReusableMethods extends Base {
         koordinatTiklamaMethodu(540,1024);
     }
 
-    public static void koordinatTiklamaMethodu(int x,int y) {
-        final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
-        var tapPoint = new Point(x, y);
-        var tap = new Sequence(finger, 1);
-        tap.addAction(finger.createPointerMove(Duration.ofMillis(0),
-                PointerInput.Origin.viewport(), tapPoint.x, tapPoint.y));
-        tap.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        tap.addAction(new Pause(finger, Duration.ofMillis(50)));
-        tap.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
-        driver.perform(Arrays.asList(tap));
-    }
     public static void ekranKaydirmaMethodu(int xPress,int yPress,int wait,int xMove,int yMove, int count){
         final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
         for (int i = 1; i <= count; i++) {
