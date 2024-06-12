@@ -804,4 +804,38 @@ public class Stepdefinition extends Base {
     public void user_displays_jumıor_title_and_clicks_on_it() {
         clickAndVerify(queryCardPage.viewJuniors);
     }
+
+    @Given("Click on he Wish List icon and verify that it is active.")
+    public void click_on_the_ish_list_icon_and_verify_that_it_is_active() throws InterruptedException {
+        Thread.sleep(2000);
+        clickAndVerify(queryCardPage.homePageWishlistButton);
+        Thread.sleep(8000);
+    }
+    @Given("Verify that the catgories icon is displayed.")
+    public void verify_that_te_categories_icon_is_displayed() {
+        queryCardPage.homePageCategoryButton.isDisplayed();
+    }
+    @Given("Click on the categores icon and verify that it is active.")
+    public void click_on_the_catgories_icon_and_verify_that_it_is_active() {
+        clickAndVerify(queryCardPage.homePageCategoryButton);
+    }
+
+    //US23-TC02
+    @Given("Click on the main age category icon.")
+    public void click_on_the_min_page_category_icon() {
+        queryCardPage.homePageCategoryButton.click();
+    }
+    @Given("Click on the men categoy product.")
+    public void click_on_the_mn_category_product() throws InterruptedException {
+        Thread.sleep(100);
+        clickAndVerify(queryCardPage.menButton);
+    }
+    @Given("Verify that the Prodct Wish List icon is displayed and active.")
+    public void verify_that_the_poduct_wish_list_icon_is_displayed_and_active() {
+        clickAndVerify(queryCardPage.corapFavoriButton);
+        driver.navigate().back();
+        clickAndVerify(queryCardPage.homePageWishlistButton);
+        queryCardPage.corapFavoriButton.isDisplayed();
+
+    }
 }
