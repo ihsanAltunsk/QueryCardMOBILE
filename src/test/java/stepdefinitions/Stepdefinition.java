@@ -532,8 +532,8 @@ public class Stepdefinition extends Base {
     }
 
     // US14
-   @Given("User clicks and verifies Address button.")
-   public void user_clicks_and_verifies_address_button() {
+    @Given("User clicks and verifies Address button.")
+    public void user_clicks_and_verifies_address_button() {
         clickAndVerify(queryCardPage.addressButton);
 }
     @Given("User should be able to view, edit, delete addresses registered on the Adress page.")
