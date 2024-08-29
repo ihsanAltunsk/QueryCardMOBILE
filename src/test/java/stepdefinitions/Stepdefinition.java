@@ -535,7 +535,7 @@ public class Stepdefinition extends Base {
     @Given("User clicks and verifies Address button.")
     public void user_clicks_and_verifies_address_button() {
         clickAndVerify(queryCardPage.addressButton);
-}
+    }
     @Given("User should be able to view, edit, delete addresses registered on the Adress page.")
     public void user_should_be_able_to_view_edit_delete_addresses_registered_on_the_adress_page() {
         koordinatTiklamaMethodu(891,424);
